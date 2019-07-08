@@ -92,16 +92,6 @@ video {
   vertical-align: baseline;
 }
 
-// Links
-a {
-  text-decoration: none;
-
-  &:active,
-  &:hover {
-    outline: 0;
-  }
-}
-
 // List
 ul,
 li {

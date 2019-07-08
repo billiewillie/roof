@@ -7,6 +7,19 @@ html {
   font-size: $fz2;
   font-weight: $regular;
   color: $mainFontColor;
+  line-height: $mainLineHeight;
+}
+
+// Links
+a {
+  text-decoration: none;
+  color: $default-color;
+
+  &:active,
+  &:hover {
+    outline: 0;
+    color: $default-color;
+  }
 }
 
 .wrapper {
@@ -57,6 +70,20 @@ section.content {
   }
 }
 
+.button{
+  padding: 14px 28px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $default-color;
+  font-family: $mainFont;
+  font-size: $fz2;
+  text-transform: uppercase;
+}
+
+.visible__md{
+  display: none;
+}
+
 @import "modules/header.scss";
 
 @import "modules/menu.scss";
@@ -67,9 +94,9 @@ section.content {
 
 @import "modules/burger.scss";
 
-@import "modules/button.scss";
-
 @import "modules/form.scss";
+
+@import "modules/socials.scss";
 
 @import "modules/footer.scss";
 
@@ -96,6 +123,10 @@ section.content {
 
   section.content {
     padding: 30px 10px;
+  }
+
+  .visible__md{
+    display: block;
   }
 
 }

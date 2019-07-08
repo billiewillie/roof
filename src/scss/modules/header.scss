@@ -1,14 +1,17 @@
 header.header {
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  position: static;
+  text-align: center;
   top: 0;
   width: 100%;
+  text-transform: uppercase;
+  position: relative;
 
-  .logo img {
-    max-height: 30px;
+  h1.logo {
+    font-size: $fz3;
+    font-weight: $regular;
   }
 }
 
@@ -17,16 +20,21 @@ header.header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 56px);
   width: 100%;
   top: 100%;
   left: 100%;
   z-index: 1;
-  padding: 10px;
   transition: .5s;
+  background-color: $default-color;
+  border-top: 10px solid $color2;
 
   &.show {
     left: 0;
+  }
+
+  & .footer{
+    flex: auto;
   }
 }
 

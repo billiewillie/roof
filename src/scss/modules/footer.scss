@@ -1,11 +1,22 @@
 footer.footer {
-  padding: 10px;
-  border-radius: 3px;
+  padding: 27px 0;
   display: flex;
   flex-direction: column;
+  background-color: $color3;
+  color: $default-color;
+
+  .footer__part{
+    text-align: center;
+  }
 
   .footer__part:first-child {
     margin-bottom: 20px;
+  }
+
+  .button{
+    border: 2px solid $default-color;
+    background-color: transparent;
+    color: $default-color;
   }
 
   h2 {
@@ -13,6 +24,10 @@ footer.footer {
     font-weight: 600;
     line-height: 1;
     margin-bottom: 10px;
+  }
+
+  .email{
+    font-size: $fz7;
   }
 }
 

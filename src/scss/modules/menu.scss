@@ -1,14 +1,23 @@
 .menu {
   display: flex;
   flex-direction: column;
+  padding: 0 30px;
 
   li {
 
     a {
-      font-size: $fz7;
-      padding: 10px 0px;
+      font-size: $fz1;
+      padding: 20px 0px;
       transition: .2s;
-      border-radius: 3px;
+      letter-spacing: $ls1;
+      display: block;
+      color: $mainFontColor;
+      border-bottom: .5px solid $color5;
+
+    }
+
+    &:last-child a{
+      border-bottom: none;
     }
   }
 }
