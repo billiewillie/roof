@@ -1,0 +1,6 @@
+- var navLinks = [{link: '#', name: "Объекты"},{link: '#', name: "Компания"},{link: '#', name: "Как купить"},{link: '#', name: "Агентам"},{link: '#', name: "Регионам"},{link: '#', name: "Акции"},{link: '#', name: "Контакты"}]
+
+ul.menu
+  for i in navLinks
+    li
+      a(href=i.link).nav-link=i.name

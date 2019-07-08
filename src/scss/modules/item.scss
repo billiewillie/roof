@@ -1,0 +1,131 @@
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  margin-bottom: 30px;
+
+  &__top {
+    padding: 17px 19px;
+    line-height: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      padding: 4px 3px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      font-size: $fz1;
+
+      &:first-child {
+        margin-right: 20px;
+        font-weight: 600;
+      }
+    }
+
+    &--star {
+      text-align: right;
+
+      & img {
+        max-height: 19px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 0 26px;
+    flex: auto;
+
+    .item__pic {
+      min-height: 212px;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 35px;
+    }
+
+    h2.item__title {
+      font-size: $fz6;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .item__info {
+      margin-bottom: 42px;
+      display: flex;
+      justify-content: space-between;
+      font-size: $fz5;
+      min-height: 44px;
+
+      p {
+        max-width: 35%;
+      }
+
+      p.item__garnish {
+        font-size: $fz4;
+        color: $color2;
+        border-left: 3px solid $color2;
+        padding-left: 10px;
+      }
+
+      span.info__extra {
+        display: block;
+        font-size: $fz2;
+      }
+    }
+
+    .item__price {
+      display: block;
+      margin-bottom: 24px;
+      font-size: $fz7;
+      font-weight: 600;
+    }
+  }
+
+  &__status {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 10px 10px;
+    font-size: $fz1;
+    line-height: 1;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 768px) {
+  .item {
+    width: 48%;
+    margin-right: 4%;
+
+    &:nth-child(even) {
+      margin-right: inherit;
+    }
+
+    &__content {
+      padding: 0 26px;
+
+      h2.item__title {
+        font-size: $fz7;
+        min-height: 68px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .item {
+    margin-right: 2%;
+    width: 32%;
+    margin-bottom: 53px;
+
+    &:nth-child(even) {
+      margin-right: 2%;
+    }
+
+    &:nth-child(3n) {
+      margin-right: inherit;
+    }
+  }
+}

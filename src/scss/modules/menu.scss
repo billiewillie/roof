@@ -1,0 +1,43 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  li {
+
+    a {
+      font-size: $fz7;
+      padding: 10px 0px;
+      transition: .2s;
+      border-radius: 3px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+
+  .menu {
+    flex-direction: row;
+
+    li {
+
+      a {
+        font-size: $fz4;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .menu {
+
+    li {
+
+      a {
+        font-size: $fz7;
+        padding: 10px 25px;
+      }
+    }
+  }
+}
