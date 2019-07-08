@@ -1,10 +1,12 @@
 header.header
-  h1.logo
-    | крыша на </br> 
-    | английской, 70
-  include ./burger
-  .mobile__hidden
-    include ./menu
-    include ./footer
-    //- a(href="tel:8888888898" type="tel").contacts
-    //-   span.contacts__phone 8 888 88 88 98
+  .container
+    h1.logo
+      | крыша на </br> 
+      | английской, 70
+    .contacts.visible__md
+      a.phone(href='tel:+79213540738') +7 921 354 07 38
+      a.email(href='mailto:panoramacenter@yandex.ru') panoramacenter@yandex.ru
+    include ./burger
+    .mobile__hidden.hidden__md
+      include ./menu
+      include ./footer

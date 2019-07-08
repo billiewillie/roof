@@ -1,12 +1,13 @@
 footer.footer
-  .footer__part.visible__md
-    h2.title 
-      | крыша на </br> 
-      | английской, 70
-  .footer__part
-    button.button забронировать
-  .footer__part
-    include ./socials
-    a.email(href='mailto:panoramacenter@yandex.ru') panoramacenter@yandex.ru
-  //- .footer__part
-  //-   a.phone
+  .container
+    .footer__part.visible__sm
+      h2.title 
+        | крыша на </br> 
+        | английской, 70
+    .footer__part
+      button.button забронировать
+    .footer__part
+      include ./socials
+      a.email(href='mailto:panoramacenter@yandex.ru') panoramacenter@yandex.ru
+    .footer__part.hidden__sm 
+      a.phone(tel:+79213540738) +7 921 354 07 38

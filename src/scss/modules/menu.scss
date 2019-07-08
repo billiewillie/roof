@@ -12,12 +12,25 @@
       letter-spacing: $ls1;
       display: block;
       color: $mainFontColor;
-      border-bottom: .5px solid $color5;
+      border-bottom: .5px solid $color5; 
 
     }
 
     &:last-child a{
       border-bottom: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .menu {
+
+    li {
+
+      a {
+        font-size: $fz6;
+      }
     }
   }
 }

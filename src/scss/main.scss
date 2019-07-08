@@ -71,13 +71,17 @@ section.content {
 }
 
 .button{
-  padding: 14px 28px;
+  padding: 14px 34px;
   border-width: 2px;
   border-style: solid;
   border-color: $default-color;
   font-family: $mainFont;
   font-size: $fz2;
   text-transform: uppercase;
+}
+
+.visible__sm{
+  display: none;
 }
 
 .visible__md{
@@ -100,17 +104,25 @@ section.content {
 
 @import "modules/footer.scss";
 
-// @media (min-width: 768px) {
-//   .wrapper{
-//     padding-top: 70px;
-//   }
-// }
+@media (min-width: 768px) {
+  .visible__sm{
+    display: block;
+  }
+
+  .hidden__sm{
+    display: none;
+  }
+}
 
 @media (min-width: 992px) {
 
-  // .wrapper{
-  //   padding-top: 118px;
-  // }
+  .hidden__md{
+    display: none;
+  }
+
+  .visible__md{
+    display: block;
+  }
 
   h1.title {
     font-size: 48px;
@@ -123,10 +135,6 @@ section.content {
 
   section.content {
     padding: 30px 10px;
-  }
-
-  .visible__md{
-    display: block;
   }
 
 }

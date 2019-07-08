@@ -12,6 +12,7 @@ header.header {
   h1.logo {
     font-size: $fz3;
     font-weight: $regular;
+    letter-spacing: $ls2;
   }
 }
 
@@ -29,12 +30,20 @@ header.header {
   background-color: $default-color;
   border-top: 10px solid $color2;
 
-  &.show {
-    left: 0;
+  & .footer,
+  & .menu {
+    opacity: 0;
+    transition: .2s;
+    transition-delay: .5s;
   }
 
-  & .footer{
-    flex: auto;
+  &.show {
+    left: 0;
+
+    & .footer,
+    & .menu {
+      opacity: 1;
+    }
   }
 }
 
@@ -53,42 +62,76 @@ header.header {
 
   header.header {
     padding: 20px 10px;
+
+    & h1.logo {
+      font-size: $fz4;
+    }
   }
 
   .mobile__hidden {
-    height: calc(100vh-70px);
+    height: calc(100vh-88px);
   }
+
 }
 
 @media (min-width: 992px) {
 
   header.header {
-    justify-content: flex-start;
+    padding: 60px 0 0;
 
-    .logo {
-      margin-right: 50px;
+    .container{
+      display: flex;
+      justify-content: space-between;
+    }
 
-      & img {
-        max-height: inherit;
+    & .contacts{
+      text-align: right;
+
+      & a{
+        color: $mainFontColor;
+        display: block;
+      }
+
+      & a.phone{
+        font-size: $fz10;
+        letter-spacing: $ls2;
+        line-height: $lineHeight2;
+      }
+
+      & a.email{
+        font-size: $fz10;
+        line-height: $mainLineHeight;
+        font-size: $fz7;
+        text-transform: lowercase;
+      }
+      
+    }
+
+    & .logo {
+      padding-left: 75px;
+      font-size: $fz8;
+      text-align: left;
+      line-height: $lineHeight2;
+      position: relative;
+
+      &::before{
+        display: block;
+        position: absolute;
+        content: '';
+        left: 0;
+        top: -80px;
+        width: 295px;
+        height: 83px;
+        background-image: url('/assets/img/brush/header-brush.png');
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
       }
     }
   }
 
-  .mobile__hidden {
-    position: relative;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: inherit;
-    width: 100%;
-    top: inherit;
-    left: inherit;
-    background-color: transparent;
-    z-index: 1;
-    padding: 0px;
-  }
-
   .contacts {
+    position: relative;
 
     &__phone {
       font-size: $fz6;
@@ -97,41 +140,20 @@ header.header {
     p {
       font-size: $fz4;
     }
-  }
-}
 
-@media (min-width: 1440px) {
-  header.header {
-    padding: 20px 107px;
-
-    .logo {
-      margin-right: 100px;
+    &::before{
+      display: block;
+      position: absolute;
+      content: '';
+      right: 0;
+      bottom: 0;
+      width: 461px;
+      height: 565px;
+      background-image: url('/assets/img/kapli.png');
+      transform: rotate(110deg);
+      background-size: contain;
+      background-position: 50%;
+      background-repeat: no-repeat;
     }
   }
-
-  .mobile__hidden {
-    position: relative;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: inherit;
-    width: 100%;
-    top: inherit;
-    left: inherit;
-    background-color: transparent;
-    z-index: 1;
-    padding: 0px;
-  }
-
-  .contacts {
-
-    &__phone {
-      font-size: $fz8;
-    }
-
-    p {
-      font-size: $fz6;
-    }
-  }
-
 }

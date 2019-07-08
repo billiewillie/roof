@@ -1,16 +1,23 @@
 footer.footer {
   padding: 27px 0;
-  display: flex;
-  flex-direction: column;
   background-color: $color3;
   color: $default-color;
+
+  & .container {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  }
 
   .footer__part{
     text-align: center;
   }
 
-  .footer__part:first-child {
-    margin-bottom: 20px;
+  h2.title{
+    text-transform: uppercase;
+    letter-spacing: $ls2;
+    font-size: $fz6;
+    line-height: $lineHeight2;
   }
 
   .button{
@@ -19,41 +26,63 @@ footer.footer {
     color: $default-color;
   }
 
-  h2 {
-    font-size: $fz6;
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-
   .email{
     font-size: $fz7;
+    text-transform: lowercase;
+  }
+
+  .phone{
+    letter-spacing: $ls2;
+    font-size: $fz10;
+    line-height: $lineHeight2;
   }
 }
 
 @media (min-width: 768px) {
 
   footer.footer {
-    padding: 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
 
-    .footer__part:first-child {
-      margin-bottom: 0;
+    & .container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
-    h2 {
-      font-size: $fz9;
+    & h2.title {
+      text-align: left;
+      font-size: $fz4;
     }
   }
-
 }
 
 @media (min-width: 992px) {
 
   footer.footer {
-    padding: 50px;
+    padding: 35px 0;
+
+    & .footer__part:nth-child(3){
+      padding-right: 75px;
+    }
+
+    & h2.title{
+      padding-left: 100px;
+      position: relative;
+      font-size: $fz8;
+
+      &::before{
+        display: block;
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 75px;
+        height: 30px;
+        background-image: url('/assets/img/icons/bird-footer.svg');
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      }
+    }
   }
 
 }

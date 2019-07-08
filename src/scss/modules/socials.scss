@@ -28,20 +28,14 @@
   }
 }
 
-// @media (min-width: 992px) {
+@media (min-width: 768px) {
 
-//   // .menu {
-//   //   flex-direction: row;
-
-//   //   li {
-
-//   //     a {
-//   //       font-size: $fz4;
-//   //       padding: 10px 15px;
-//   //     }
-//   //   }
-//   // }
-// }
+  .socials {
+    flex-direction: row;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+}
 
 // @media (min-width: 1440px) {
 
