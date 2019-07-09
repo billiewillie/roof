@@ -1,7 +1,29 @@
 extends ./layout/template.pug
-//- block content
-//-   h1.title
-//-   section.content
-//-     ul.list
-      //- include ./module/item
-    include ./module/button
+block content
+  .title
+    img(src="./assets/img/title.svg", alt="title")
+  button.button.hidden__md забронировать
+  .main__gallery
+    ul.photostack
+      li
+        img(src="./assets/img/polaroid/polaroid1.png", alt="photostack_pic")
+        span только мы с тобой
+      li
+        img(src="./assets/img/polaroid/polaroid9.png", alt="photostack_pic")
+        span счастливые
+      li
+        img(src="./assets/img/polaroid/polaroid3.png", alt="photostack_pic")
+        span 
+          | from Piter </br> 
+          | with love
+          span.heart
+      li
+        img(src="./assets/img/polaroid/polaroid3.png", alt="photostack_pic")
+        span То самое место...
+
+    a.main__gallery--photos(href="#") смотреть все фото
+  p.main__description 
+    | Приватные террасы, на которые мы вас приглашаем, расположены на крыше особняк XIX века на 
+    b Английской набережной
+    |, в двух шагах от острова 
+    b Новая Голландия.

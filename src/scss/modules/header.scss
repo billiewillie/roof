@@ -1,5 +1,5 @@
 header.header {
-  padding: 10px;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,20 @@ header.header {
     font-size: $fz3;
     font-weight: $regular;
     letter-spacing: $ls2;
+
+    &::before{
+      display: block;
+      position: absolute;
+      content: '';
+      left: -40px;
+      top: -40px;
+      width: 295px;
+      height: 83px;
+      background-image: url('/assets/img/brush/header-brush.png');
+      background-size: contain;
+      background-position: 50%;
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -69,7 +83,7 @@ header.header {
   }
 
   .mobile__hidden {
-    height: calc(100vh-88px);
+    height: calc(100vh-78px);
   }
 
 }
@@ -107,7 +121,7 @@ header.header {
       
     }
 
-    & .logo {
+    & h1.logo {
       padding-left: 75px;
       font-size: $fz8;
       text-align: left;
@@ -115,17 +129,8 @@ header.header {
       position: relative;
 
       &::before{
-        display: block;
-        position: absolute;
-        content: '';
         left: 0;
         top: -80px;
-        width: 295px;
-        height: 83px;
-        background-image: url('/assets/img/brush/header-brush.png');
-        background-size: contain;
-        background-position: 50%;
-        background-repeat: no-repeat;
       }
     }
   }

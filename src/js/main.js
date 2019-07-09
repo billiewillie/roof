@@ -1,3 +1,6 @@
 import jquery from 'jquery';
+// import * as photostack from 'photostack'
 import * as burger from './component/nav';
-import Item from './component/item';
+
+
+// $(".photostack").Photostack();
