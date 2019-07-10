@@ -15,7 +15,8 @@
       background-position: 50%;
       background-size: contain;
       background-repeat: no-repeat;
-
+      cursor: pointer;
+      position: relative;
     }
 
     &:nth-child(2) a.nav-link{

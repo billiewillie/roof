@@ -1,0 +1,125 @@
+section.present{
+  margin-bottom: 40px;
+  position: relative;
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: '';
+    right: -70px;
+    bottom: 6%;
+    width: 80%;
+    height: 80%;
+    background-image: url('/assets/img/plant.png');
+    background-size: contain;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+  }
+
+  & h2.title{
+    font-size: $fz8;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: $ls2;
+  }
+
+  & .present__content{
+
+    & .container{
+      display: flex;
+      flex-direction: column;
+
+      & p.present__text{
+        font-size: $fz4;
+        margin-bottom: 20px;
+      }
+
+      & .present__pic{
+        width: 110%;
+        margin-left: -5%;
+      }
+    }
+  }
+
+  & .button__outter{
+    text-align: center;
+    margin-top: -26px;
+
+    & button.button{
+      text-transform: uppercase;
+      padding: 15px;
+      border: 2px solid $mainFontColor;
+      font-size: $fz2;
+      background-color: $default-color;
+      font-weight: $medium;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  section.present{
+    margin-bottom: 40px;
+
+    & h2.title{
+      font-size: $fz9;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    & .present__content{
+
+      & .container{
+        flex-direction: row;
+        align-items: center;
+  
+        & p.present__text{
+          font-size: $fz4;
+          margin-bottom: 0px;
+          padding: 60px 35px 35px;
+          border: 2px solid $mainFontColor;
+          max-width: 320px;
+          font-weight: $bold;
+          position: relative;
+
+          &::before {
+            display: block;
+            position: absolute;
+            content: '';
+            left: 35px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-image: url('/assets/img/icons/present.svg');
+            background-size: contain;
+            background-position: 50%;
+            background-repeat: no-repeat;
+          }
+
+          &::after {
+            display: block;
+            position: absolute;
+            content: '';
+            bottom: 0;
+            top: 0;
+            right: -36px;
+            margin: auto;
+            width: 73px;
+            height: 358px;
+            background-image: url('/assets/img/brush/present-brush.png');
+            background-size: contain;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            z-index: -1;
+          }
+        }
+  
+        & .present__pic{
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

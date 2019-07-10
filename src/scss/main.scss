@@ -37,7 +37,7 @@ a {
 
 .container {
   padding: 0 10px;
-  max-width: 1280px;
+  max-width: $desktopWidth;
   width: 100%;
   margin: 0 auto;
 }
@@ -45,7 +45,6 @@ a {
 .main {
   padding: 35px 0 50px;
   flex: auto;
-  z-index: -1;
   position: relative;
 
   & .container {
@@ -106,7 +105,7 @@ main.main{
       position: relative;
       margin-bottom: 150px;
     
-      &::before{
+      &::before {
         display: block;
         position: absolute;
         content: '';
@@ -174,18 +173,19 @@ main.main{
 
   
 
-  & a.main__gallery--photos{
-    font-weight: $medium;
-    text-decoration: underline;
-    font-style: italic;
-    color: $mainFontColor;
-    font-size: $fz4;
+  & .main__gallery--photos{
+    & a{
+      font-weight: $medium;
+      text-decoration: underline;
+      font-style: italic;
+      color: $mainFontColor;
+      font-size: $fz4;
 
-    &:hover {
-      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
-
 }
 
 @import "modules/header.scss";
@@ -193,8 +193,6 @@ main.main{
 @import "modules/menu.scss";
 
 @import "modules/sort.scss";
-
-@import "modules/item.scss";
 
 @import "modules/burger.scss";
 
@@ -205,6 +203,8 @@ main.main{
 @import "modules/photostack.scss";
 
 @import "modules/areas.scss";
+
+@import "modules/present.scss";
 
 @import "modules/footer.scss";
 
@@ -220,8 +220,7 @@ main.main{
   main.main{
 
     & .container{
-      flex-direction: row;
-      align-items: flex-start;
+      
   
       & .title{
         max-width: 100%;
@@ -260,6 +259,8 @@ main.main{
     padding: 15px 0 102px;
 
     .container {
+      flex-direction: row;
+      align-items: stretch;
 
       & .main__about{
         display: flex;
@@ -313,7 +314,7 @@ main.main{
         z-index: 1;
 
         &::before{
-          top: 40px;
+          top: 30px;
           width: 723px;
           height: 556px;
         }
@@ -362,23 +363,24 @@ main.main{
           }
         }
       }
+
+      & .main__gallery{
+        margin-bottom: 0;
+
+        & p.main__gallery--text{
+          padding: 35px;
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+          font-size: $fz5;
+          background-color: $default-color;
+          position: relative;
+          transition: .2s;
+          text-align: left;
+
+          &:hover{
+            z-index: 5;
+          }
+        }
+      }
     }
-
-  }
-
-  section.content {
-    padding: 30px 10px;
-  }
-
-}
-
-@media (min-width: 1440px) {
-
-  h1.title {
-    padding: 0 108px;
-  }
-
-  section.content {
-    padding: 74px 108px;
   }
 }
