@@ -204,6 +204,8 @@ main.main{
 
 @import "modules/photostack.scss";
 
+@import "modules/areas.scss";
+
 @import "modules/footer.scss";
 
 @media (min-width: 768px) {
@@ -262,19 +264,18 @@ main.main{
       & .main__about{
         display: flex;
         flex-direction: column;
-        margin-right: 50px;
+        margin-right: 100px;
   
         & .socials{
           flex-direction: column;
           justify-content: flex-start;
-          min-width: 196px;
-          min-height: 300px;
+          margin-bottom: 320px;
 
           &::before{
             position: absolute;
             content: '';
             display: block;
-            bottom: 30px;
+            top: 140px;
             width: 196px;
             height: 306px;
             background-image: url('/assets/img/icons/checks.svg');
@@ -298,6 +299,10 @@ main.main{
             &:nth-child(3) a.nav-link{
               background-image: url('/assets/img/icons/insta-black.svg');
             }
+          }
+
+          & li:last-child{
+            margin-bottom: 0;
           }
         }
       }

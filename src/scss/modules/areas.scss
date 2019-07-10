@@ -1,0 +1,18 @@
+ul.areas{
+  & li.areas__item {
+    & h3.areas__title{
+      font-size: $fz15;
+      font-family: $font5;
+
+      &::before{
+        position: absolute;
+        content: '';
+        display: block;
+        top: 100%;
+        width: 100%;
+        height: 1px;
+        background-color: $color6;
+      }
+    }
+  }
+}
