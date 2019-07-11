@@ -1,4 +1,4 @@
-.photostack{
+.photostack {
   position: relative;
   padding: 0;
   margin: 0;
@@ -10,19 +10,19 @@
   &::before {
     display: block;
     position: absolute;
-    content: '';
+    content: "";
     right: -250px;
     top: 180px;
     width: 100%;
     height: 100%;
-    background-image: url('/assets/img/kapli.png');
+    background-image: url("/assets/img/kapli.png");
     background-repeat: no-repeat;
     background-position: 1000% 100%;
     background-size: contain;
     transform: rotate(-144deg);
   }
-  
-  & > li{
+
+  & > li {
     position: absolute;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@
 
     & span {
       position: absolute;
-      opacity: .85;
+      opacity: 0.85;
       left: 0;
       right: 0;
       margin: auto;
@@ -43,7 +43,6 @@
       z-index: 4;
       top: 15%;
       left: -15%;
-      
 
       & span {
         bottom: 11%;
@@ -80,7 +79,7 @@
           height: 25px;
           right: 30%;
           left: auto;
-          background-image: url('/assets/img/icons/heart.svg');
+          background-image: url("/assets/img/icons/heart.svg");
           background-repeat: no-repeat;
           background-position: 50%;
           background-size: contain;
@@ -105,7 +104,7 @@
 }
 
 @media (min-width: 768px) {
-  .photostack{
+  .photostack {
     height: 50vh;
 
     &::before {
@@ -114,7 +113,7 @@
       transform: rotate(37.57deg);
     }
 
-    & > li{
+    & > li {
       width: 360px;
       height: 418px;
 
@@ -151,11 +150,10 @@
 }
 
 @media (min-width: 992px) {
-
-  .photostack{
+  .photostack {
     height: 500px;
     margin-top: -60px;
-  
+
     &::before {
       right: -140px;
       top: 70px;
@@ -164,27 +162,27 @@
       background-position: 50%;
       transform: rotate(-37.57deg);
     }
-    
-    & > li{
+
+    & > li {
       height: 418px;
-  
+
       &:nth-child(1) {
         top: 10%;
         left: -45%;
       }
-  
+
       &:nth-child(2) {
         top: 18%;
-        left: -5%;
+        left: 9%;
       }
-  
+
       &:nth-child(3) {
         left: -30%;
       }
-  
+
       &:nth-child(4) {
         top: 2%;
-        left: -12%;
+        left: 5%;
       }
     }
   }

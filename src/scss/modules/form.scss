@@ -42,10 +42,18 @@ form.form {
 }
 
 @media (min-width: 768px) {
-}
+  form.form {
+    & .form__field {
+      input.input {
+        &::placeholder {
+          font-size: $fz5;
+        }
+      }
+    }
 
-@media (min-width: 992px) {
-  .form__field:first-child {
-    margin-right: 54px;
+    & button.button {
+      align-self: flex-start;
+      max-width: 190px;
+    }
   }
 }
