@@ -9,29 +9,29 @@ footer.footer {
     justify-content: space-between;
   }
 
-  .footer__part{
+  .footer__part {
     text-align: center;
   }
 
-  h2.title{
+  h2.title {
     text-transform: uppercase;
     letter-spacing: $ls2;
     font-size: $fz6;
     line-height: $lineHeight2;
   }
 
-  .button{
+  .button {
     border: 2px solid $default-color;
     background-color: transparent;
     color: $default-color;
   }
 
-  .email{
+  .email {
     font-size: $fz7;
     text-transform: lowercase;
   }
 
-  .phone{
+  .phone {
     letter-spacing: $ls2;
     font-size: $fz10;
     line-height: $lineHeight2;
@@ -39,9 +39,7 @@ footer.footer {
 }
 
 @media (min-width: 768px) {
-
   footer.footer {
-
     & .container {
       flex-direction: row;
       justify-content: space-between;
@@ -51,38 +49,37 @@ footer.footer {
     & h2.title {
       text-align: left;
       font-size: $fz4;
+      min-width: 202px;
     }
   }
 }
 
 @media (min-width: 992px) {
-
   footer.footer {
     padding: 35px 0;
 
-    & .footer__part:nth-child(3){
-      padding-right: 75px;
+    & .footer__part:nth-child(3) {
+      min-width: 326px;
     }
 
-    & h2.title{
+    & h2.title {
       padding-left: 100px;
       position: relative;
       font-size: $fz8;
 
-      &::before{
+      &::before {
         display: block;
         position: absolute;
-        content: '';
+        content: "";
         left: 0;
         top: 0;
         width: 75px;
         height: 30px;
-        background-image: url('/assets/img/icons/bird-footer.svg');
+        background-image: url("/assets/img/icons/bird-footer.svg");
         background-size: contain;
         background-position: 50%;
         background-repeat: no-repeat;
       }
     }
   }
-
 }

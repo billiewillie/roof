@@ -1,52 +1,51 @@
-section.present{
+section.present {
   margin-bottom: 40px;
   position: relative;
 
   &::before {
     display: block;
     position: absolute;
-    content: '';
+    content: "";
     right: -70px;
     bottom: 6%;
     width: 80%;
     height: 80%;
-    background-image: url('/assets/img/plant.png');
+    background-image: url("/assets/img/plant.png");
     background-size: contain;
     background-position: 100%;
     background-repeat: no-repeat;
-    transform: rotate(0deg);
+    z-index: 1;
   }
 
-  & h2.title{
+  & h2.title {
     font-size: $fz8;
     text-transform: uppercase;
     margin-bottom: 20px;
     letter-spacing: $ls2;
   }
 
-  & .present__content{
-
-    & .container{
+  & .present__content {
+    & .container {
       display: flex;
       flex-direction: column;
 
-      & p.present__text{
+      & p.present__text {
         font-size: $fz4;
         margin-bottom: 20px;
       }
 
-      & .present__pic{
+      & .present__pic {
         width: 110%;
         margin-left: -5%;
       }
     }
   }
 
-  & .button__outter{
+  & .button__outter {
     text-align: center;
     margin-top: -26px;
 
-    & button.button{
+    & button.button {
       text-transform: uppercase;
       padding: 15px;
       border: 2px solid $mainFontColor;
@@ -59,22 +58,32 @@ section.present{
 }
 
 @media (min-width: 768px) {
-  section.present{
+  section.present {
     margin-bottom: 40px;
 
-    & h2.title{
+    &::before {
+      right: -70px;
+      bottom: auto;
+      top: 0;
+      width: 250px;
+      height: 430px;
+      transform: rotate(0deg);
+    }
+
+    & h2.title {
       font-size: $fz9;
       text-align: center;
       margin-bottom: 50px;
     }
 
-    & .present__content{
+    & .present__content {
+      margin-bottom: 100px;
 
-      & .container{
+      & .container {
         flex-direction: row;
         align-items: center;
-  
-        & p.present__text{
+
+        & p.present__text {
           font-size: $fz4;
           margin-bottom: 0px;
           padding: 60px 35px 35px;
@@ -82,16 +91,17 @@ section.present{
           max-width: 320px;
           font-weight: $bold;
           position: relative;
+          margin-right: 60px;
 
           &::before {
             display: block;
             position: absolute;
-            content: '';
+            content: "";
             left: 35px;
             top: 20px;
             width: 20px;
             height: 20px;
-            background-image: url('/assets/img/icons/present.svg');
+            background-image: url("/assets/img/icons/present.svg");
             background-size: contain;
             background-position: 50%;
             background-repeat: no-repeat;
@@ -100,24 +110,94 @@ section.present{
           &::after {
             display: block;
             position: absolute;
-            content: '';
+            content: "";
             bottom: 0;
             top: 0;
             right: -36px;
             margin: auto;
             width: 73px;
             height: 358px;
-            background-image: url('/assets/img/brush/present-brush.png');
+            background-image: url("/assets/img/brush/present-brush.png");
             background-size: contain;
             background-position: 50%;
             background-repeat: no-repeat;
             z-index: -1;
           }
         }
-  
-        & .present__pic{
+
+        & .present__pic {
           width: 100%;
           margin-left: 0;
+          position: relative;
+
+          &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            left: -250px;
+            bottom: -105px;
+            width: 409px;
+            height: 117px;
+            background-image: url("/assets/img/pencil.png");
+            background-size: contain;
+            background-position: 50%;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+
+    & .button__outter {
+      margin-top: 0;
+
+      & button.button {
+        padding: 15px;
+        font-size: $fz2;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  section.present {
+    &::before {
+      width: 553px;
+      height: 692px;
+      top: -200px;
+      right: -1px;
+    }
+
+    & .present__content {
+      & .container {
+        & p.present__text {
+          font-size: $fz8;
+          padding: 80px 45px 55px;
+          max-width: 380px;
+
+          &::before {
+            left: 45px;
+            top: 30px;
+            width: 26px;
+            height: 26px;
+          }
+        }
+
+        & .present__pic {
+          &::after {
+            display: block;
+            position: absolute;
+            content: "";
+            right: -100px;
+            bottom: -80px;
+            width: 539px;
+            height: 414px;
+            background-image: url("/assets/img/cert_back.png");
+            background-size: contain;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            transform: rotate(-4.54deg);
+            z-index: -1;
+          }
         }
       }
     }
