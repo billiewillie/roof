@@ -2,96 +2,49 @@ form.form {
   display: flex;
   flex-direction: column;
 
-  .form__field:first-child {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+  & .form__field {
+    margin-bottom: 25px;
 
     input.input {
-      margin-bottom: 10px;
-      border-radius: 3px;
-      padding: 13px 20px;
-      font-size: $fz5;
-      line-height: 1;
+      padding: 0;
+      font-size: $fz3;
+      border-bottom: 2px solid $mainFontColor;
+      width: 100%;
+      padding-bottom: 5px;
+      font-family: $mainFont;
 
       &::placeholder {
-        font-size: $fz5;
+        font-size: $fz1;
+        opacity: 0.5;
+        font-family: $mainFont;
       }
     }
   }
 
-  .checkbox__field {
-    display: flex;
-    align-items: center;
+  & .form__field:nth-child(3) {
+    margin-bottom: 40px;
+  }
+
+  & .form__field:last-child {
+    margin-bottom: 0;
+  }
+
+  & button.button {
+    font-size: $fz2;
     text-transform: uppercase;
-
-    .checkbox {
-      z-index: 1;
-      opacity: 0;
-    }
-
-    label {
-      position: relative;
-      padding-left: 10px;
-    }
-
-    label::before {
-      position: absolute;
-      display: block;
-      content: '';
-      font-weight: 800;
-      text-align: center;
-      top: 0;
-      bottom: 0;
-      left: -13px;
-      width: 18px;
-      height: 18px;
-      border-radius: 3px;
-    }
-
-    input[type=checkbox]:checked+label:before {
-      content: '\2713';
-    }
-  }
-
-  .form__field:last-child {
-    text-align: center;
-  }
-
-  button.button {
-    font-size: $fz4;
-    border-radius: 3px;
-    padding: 15px 41px;
-    line-height: 1;
-    letter-spacing: 1px;
+    padding: 15px;
+    width: 100%;
+    border: 2px solid $mainFontColor;
+    background-color: $default-color;
+    letter-spacing: $ls1;
+    margin-bottom: 0;
   }
 }
 
 @media (min-width: 768px) {
-
-  form.form {
-    flex-direction: row;
-    align-items: flex-start;
-
-    .form__field:first-child {
-      margin-bottom: 0;
-      margin-right: 20px;
-
-      input.input {
-        margin-bottom: 15px;
-        min-height: 47px;
-      }
-    }
-
-    button.button {
-      min-height: 47px;
-    }
-  }
-
 }
 
 @media (min-width: 992px) {
-
   .form__field:first-child {
     margin-right: 54px;
   }
