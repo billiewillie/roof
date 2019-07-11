@@ -1,13 +1,14 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require("webpack");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const PATHS = {
-  src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
-}
+  src: path.join(__dirname, "../src"),
+  dist: path.join(__dirname, "../dist"),
+  assets: "assets/"
+};
 
 module.exports = {
   // BASE config
@@ -19,14 +20,15 @@ module.exports = {
   },
   output: {
     filename: `${PATHS.assets}js/[name].js`,
-    path: PATHS.dist,
+    path: PATHS.dist
     // publicPath: '/'
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: '/node_modules/'
+        loader: "babel-loader",
+        exclude: "/node_modules/"
       },
       {
         test: /\.pug$/,
@@ -37,31 +39,33 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: '[name].[ext]'
+          name: "[name].[ext]"
         }
       },
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          "style-loader",
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               sourceMap: true
             }
-          }, {
-            loader: 'postcss-loader',
+          },
+          {
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
               config: {
                 path: `${PATHS.src}/js/postcss.config.js`
               }
             }
-          }, {
-            loader: 'sass-loader',
+          },
+          {
+            loader: "sass-loader",
             options: {
               sourceMap: true
             }
@@ -71,15 +75,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          "style-loader",
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               sourceMap: true
             }
-          }, {
-            loader: 'postcss-loader',
+          },
+          {
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
               config: {
@@ -93,30 +98,35 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].css`,
+      filename: `${PATHS.assets}css/[name].css`
     }),
     // Copy HtmlWebpackPlugin and change index.html for another html page
     new HtmlWebpackPlugin({
       hash: false,
       template: `${PATHS.src}/pug/index.pug`,
-      filename: './index.html'
+      filename: "./index.html"
     }),
-    new CopyWebpackPlugin([{
+    new CopyWebpackPlugin([
+      {
         from: `${PATHS.src}/img`,
         to: `${PATHS.assets}img`
       },
       {
         from: `${PATHS.src}/static`,
-        to: ''
+        to: ""
       },
       {
         from: `${PATHS.src}/fonts`,
         to: `${PATHS.assets}fonts`
-      },
+      }
       // {
       //   from: `${PATHS.src}/data`,
       //   to: `${PATHS.assets}data`
       // },
-    ])
-  ],
-}
+    ]),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ]
+};
