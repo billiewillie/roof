@@ -1,5 +1,10 @@
 section.gallery {
   margin-bottom: 110px;
+  background-image: url("/assets/img/slider-bg.png");
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 75%;
+
   & .container {
     & h2.title {
       font-family: $font5;
@@ -14,5 +19,23 @@ section.gallery {
 
   & .slider__item {
     max-width: 400px;
+  }
+
+  & .slick-slide {
+    & img {
+      transform: rotate(0);
+    }
+
+    &:nth-child(2n) {
+      & img {
+        transform: rotate(-1.75deg);
+      }
+    }
+
+    &:nth-child(3n) {
+      & img {
+        transform: rotate(3.95deg);
+      }
+    }
   }
 }

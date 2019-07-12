@@ -7,7 +7,7 @@ $(".slider").slick({
   dots: true,
   arrows: true,
   infinite: true,
-  autoplay: true,
+  autoplay: false,
   slidesToShow: 3,
   slidesToScroll: 1
 });
