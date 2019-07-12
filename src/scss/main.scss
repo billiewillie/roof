@@ -200,13 +200,19 @@ main.main {
 
 @import "modules/areas.scss";
 
-@import "modules/present.scss";
+@import "modules/gallery.scss";
 
-@import "modules/response.scss";
+@import "modules/present.scss";
 
 @import "modules/faq.scss";
 
+@import "modules/response.scss";
+
 @import "modules/footer.scss";
+
+@import "modules/slick.scss";
+
+@import "modules/slick-theme.scss";
 
 @media (min-width: 768px) {
   .visible__sm {

@@ -80,9 +80,16 @@ section.faq {
     }
 
     & .faq__item {
-      & h3.title {
+      & h3.faq__item--title {
         font-size: $fz8;
       }
+
+      & p {
+        font-size: $fz7;
+      }
+    }
+
+    & .faq__item.open {
       & p {
         font-size: $fz7;
       }
