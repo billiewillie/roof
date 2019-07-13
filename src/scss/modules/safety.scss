@@ -144,18 +144,25 @@ section.safety {
     .container {
       & .block__title {
         text-align: center;
+        margin-bottom: 40px;
+        padding: 20px;
 
         & h2.title {
           display: inline-block;
+
+          &::before {
+            right: -60px;
+            transform: rotate(90deg);
+          }
         }
       }
 
       & .safety__describe {
         text-align: center;
+        font-size: $fz7;
       }
       & .comfort {
         display: flex;
-        align-items: flex-start;
 
         & .comfort__part {
           width: 50%;
@@ -163,20 +170,102 @@ section.safety {
 
           &.options {
             margin-bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
           }
 
           & .comfort__part--title {
             position: absolute;
-            transform: rotate(-90deg);
             z-index: 1;
-            left: 0;
-            bottom: 0;
-            top: 0;
-            margin: auto;
+            left: 20px;
+            top: 50%;
+            transform: translateX(-50%) rotate(-90deg);
+            margin-bottom: 0;
           }
 
           &:nth-child(2) {
             padding: 0;
+          }
+
+          & .comfort__part--item {
+            padding: 15px 20px 15px 40px;
+  
+            &::after {
+              left: 40px;
+            }
+  
+            &:last-child {
+              padding: 15px 20px 30px 40px;
+            }
+  
+            &:nth-child(2) {
+              padding: 30px 20px 15px 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  section.safety {
+
+    .container {
+
+      & .block__title {
+  
+        & h2.title {
+          font-size: $fz9;
+  
+          &::before {
+            right: -40px;
+          }
+        }
+      }
+
+      & .comfort {
+
+        & .comfort__part {
+
+          &.options {
+            font-size: $fz5;
+  
+            & li.options__item {
+              padding: 0 45px 15px 60px;
+              font-size: $fz7;
+  
+              &::before {
+                width: 43px;
+                height: 43px;
+              }
+  
+              &:last-child {
+                padding: 0 20px 0px 60px;
+              }
+            }
+          }
+
+          & .comfort__part--title {
+            left: 60px;
+          }
+
+          & .comfort__part--item {
+            padding: 15px 40px 15px 120px;
+  
+            &::after {
+              left: 120px;
+              width: 70%;
+            }
+  
+            &:last-child {
+              padding: 15px 40px 30px 120px;
+            }
+  
+            &:nth-child(2) {
+              padding: 30px 40px 15px 120px;
+            }
           }
         }
       }
