@@ -1,30 +1,30 @@
-section.offer{
+section.offer {
   margin-bottom: 40px;
 
   & .container {
     padding: 0;
 
-    & .offer__top{
+    & .offer__top {
       padding: 0 30px 30px;
 
-      & h2.title{
+      & h2.title {
         font-size: $fz8;
         text-transform: uppercase;
         letter-spacing: $ls2;
         position: relative;
         margin-bottom: 40px;
 
-        &::before{
+        &::before {
           display: block;
           position: absolute;
-          content: '';
+          content: "";
           left: -120px;
           top: 0;
           bottom: 0;
           margin: auto;
           width: 295px;
           height: 83px;
-          background-image: url('/assets/img/brush/offer-brush.png');
+          background-image: url("/assets/img/brush/offer-brush.png");
           background-size: contain;
           background-position: 50%;
           background-repeat: no-repeat;
@@ -32,21 +32,19 @@ section.offer{
         }
       }
 
-      & p{
+      & p {
         font-weight: $medium;
         font-size: $fz5;
       }
     }
 
-    & .content{
-
-      & .offer__list{
+    & .content {
+      & .offer__list {
         padding: 30px 30px 20px;
         background-color: $color2;
 
-        & .offer__item{
-
-          & .offer__item--about{
+        & .offer__item {
+          & .offer__item--about {
             padding: 40px 20px 20px;
             border: 2px solid $default-color;
             position: relative;
@@ -57,7 +55,7 @@ section.offer{
             align-items: center;
             margin-bottom: 10px;
 
-            & h3.offer__item--title{
+            & h3.offer__item--title {
               font-family: $font5;
               font-size: $fz14;
               text-align: center;
@@ -65,16 +63,16 @@ section.offer{
               position: relative;
               margin-bottom: 45px;
 
-              &::before{
+              &::before {
                 display: block;
                 position: absolute;
-                content: '';
+                content: "";
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
                 width: 250px;
                 height: 96px;
-                background-image: url('/assets/img/brush/white-brush.png');
+                background-image: url("/assets/img/brush/white-brush.png");
                 background-size: contain;
                 background-position: 50%;
                 background-repeat: no-repeat;
@@ -82,7 +80,7 @@ section.offer{
               }
             }
 
-            & .select__title{
+            & .select__title {
               width: 160px;
               padding: 5px 20px 0;
               background-color: $default-color;
@@ -90,7 +88,7 @@ section.offer{
               font-size: $fz1;
             }
 
-            & select.select{
+            & select.select {
               width: 160px;
               height: 40px;
               font-size: $fz10;
@@ -99,33 +97,33 @@ section.offer{
               line-height: 158%;
               padding: 0 15px;
               margin-bottom: 20px;
+              background-color: $default-color;
 
-              & option{
+              & option {
                 font-weight: $bold;
               }
             }
 
-            & .offer__item--included{
-
-              & h3{
+            & .offer__item--included {
+              & h3 {
                 font-size: $fz1;
                 text-align: center;
                 margin-bottom: 15px;
                 display: block;
               }
 
-              & ul{
+              & ul {
                 text-align: left;
-                & li{
+                & li {
                   padding-left: 20px;
                   font-size: $fz4;
                   position: relative;
                   margin-bottom: 10px;
 
-                  &::before{
+                  &::before {
                     display: block;
                     position: absolute;
-                    content: '—';
+                    content: "—";
                     left: 0;
                     top: 0;
                     bottom: 0;
@@ -133,14 +131,14 @@ section.offer{
                   }
                 }
 
-                & li:last-child{
+                & li:last-child {
                   margin-bottom: 0px;
                 }
               }
             }
           }
 
-          & a.additional__button{
+          & a.additional__button {
             background-color: $default-color;
             color: $mainFontColor;
             text-align: center;
@@ -151,7 +149,7 @@ section.offer{
             position: relative;
             margin-bottom: 15px;
 
-            & span.plus{
+            & span.plus {
               font-size: $fz10;
               position: absolute;
               left: 15px;
@@ -160,7 +158,7 @@ section.offer{
               margin: auto;
             }
 
-            & span.check{
+            & span.check {
               font-size: $fz5;
               position: absolute;
               right: 15px;
@@ -172,7 +170,7 @@ section.offer{
             }
           }
 
-          & .offer__price{
+          & .offer__price {
             display: flex;
             width: 200px;
             margin: auto;
@@ -180,18 +178,18 @@ section.offer{
             margin-bottom: 15px;
             align-items: flex-end;
 
-            & span.offer__price--title{
+            & span.offer__price--title {
               font-size: $fz2;
             }
 
-            & span.offer__price--sum{
+            & span.offer__price--sum {
               font-size: $fz12;
               font-weight: $bold;
               line-height: 1;
             }
           }
 
-          & button.button{
+          & button.button {
             width: 200px;
             font-size: $fz2;
             text-transform: uppercase;
@@ -205,61 +203,139 @@ section.offer{
         }
       }
     }
+
+    & .offer__slider {
+      padding: 85px 0;
+      background-image: url("/assets/img/offer-plant.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 0;
+      margin-bottom: 50px;
+
+      & ul.list {
+        background-color: $mainFontColor;
+        font-size: 0;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          top: -20px;
+          left: 60px;
+          width: 40px;
+          height: 40px;
+          background-image: url("/assets/img/icons/heart.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          z-index: 1;
+        }
+
+        &::after {
+          position: absolute;
+          display: block;
+          content: "";
+          bottom: -35px;
+          right: 10px;
+          width: 230px;
+          height: 75px;
+          background-image: url("/assets/img/brush/title-brush.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          transform: rotate(4deg);
+          z-index: 1;
+        }
+
+        & .slick-dots {
+          bottom: -55px;
+        }
+      }
+    }
+
+    & .conditions {
+      padding: 0 30px;
+
+      & h3.title {
+        margin-bottom: 30px;
+        font-size: $fz8;
+        letter-spacing: $ls2;
+        text-transform: uppercase;
+      }
+
+      & p {
+        text-indent: 20px;
+        font-size: $fz5;
+        margin-bottom: 10px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          display: block;
+          content: "—";
+          top: 0px;
+          left: -20px;
+          font-size: 15px;
+        }
+      }
+
+      & p:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
 @media (min-width: 768px) {
-
 }
 
 @media (min-width: 992px) {
-  section.offer{
+  section.offer {
     margin-bottom: 70px;
-  
+
     & .container {
       padding: 0;
-  
-      & .offer__top{
+
+      & .offer__top {
         padding: 0 110px 40px 40%;
-  
-        & h2.title{
+
+        & h2.title {
           font-size: $fz9;
           margin-bottom: 20px;
         }
-  
-        & p{
+
+        & p {
           font-weight: $medium;
           font-size: $fz7;
           line-height: 150%;
         }
       }
-  
-      & .content{
-  
-        & .offer__list{
+
+      & .content {
+        & .offer__list {
           padding: 30px 30px 20px;
           background-color: $color2;
-  
-          & .offer__item{
-  
-            & .offer__item--about{
+
+          & .offer__item {
+            & .offer__item--about {
               padding: 40px 20px 20px;
               border: 2px solid $default-color;
               position: relative;
               z-index: 0;
-  
-              & h3.offer__item--title{
+
+              & h3.offer__item--title {
                 font-family: $font5;
                 font-size: $fz14;
                 text-align: center;
                 line-height: 88%;
                 position: relative;
                 margin-bottom: 40px;
-  
-                &::before{
+
+                &::before {
                   display: block;
                   position: absolute;
-                  content: '';
+                  content: "";
                   left: 0;
                   top: 0;
                   right: 0;
@@ -267,7 +343,7 @@ section.offer{
                   margin: auto;
                   width: 250px;
                   height: 96px;
-                  background-image: url('/assets/img/brush/white-brush.png');
+                  background-image: url("/assets/img/brush/white-brush.png");
                   background-size: contain;
                   background-position: 50%;
                   background-repeat: no-repeat;
@@ -277,6 +353,10 @@ section.offer{
             }
           }
         }
+      }
+
+      & .offer__slider {
+        display: none;
       }
     }
   }
