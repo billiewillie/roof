@@ -36,7 +36,7 @@ a {
 }
 
 .container {
-  padding: 0 10px;
+  padding: 0 30px;
   max-width: $desktopWidth;
   width: 100%;
   margin: 0 auto;
@@ -197,6 +197,8 @@ main.main {
 @import "modules/socials.scss";
 
 @import "modules/photostack.scss";
+
+@import "modules/offer.scss";
 
 @import "modules/areas.scss";
 
