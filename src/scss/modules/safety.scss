@@ -140,8 +140,46 @@ section.safety {
 
 @media (min-width: 768px) {
   section.safety {
+    margin-bottom: 90px;
     .container {
-      padding: 0 10px;
+      & .block__title {
+        text-align: center;
+
+        & h2.title {
+          display: inline-block;
+        }
+      }
+
+      & .safety__describe {
+        text-align: center;
+      }
+      & .comfort {
+        display: flex;
+        align-items: flex-start;
+
+        & .comfort__part {
+          width: 50%;
+          position: relative;
+
+          &.options {
+            margin-bottom: 0;
+          }
+
+          & .comfort__part--title {
+            position: absolute;
+            transform: rotate(-90deg);
+            z-index: 1;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+          }
+
+          &:nth-child(2) {
+            padding: 0;
+          }
+        }
+      }
     }
   }
 }
