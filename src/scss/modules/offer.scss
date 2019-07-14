@@ -43,7 +43,9 @@ section.offer {
         padding: 30px 30px 20px;
         background-color: $color2;
 
-        & .offer__item {
+        & form.offer__item {
+          position: relative;
+
           & .offer__item--about {
             padding: 40px 20px 20px;
             border: 2px solid $default-color;
@@ -200,6 +202,176 @@ section.offer {
             border: 2px solid $mainFontColor;
             background-color: $default-color;
           }
+
+          & .options{
+            position: absolute;
+            display: flex;
+            align-items: stretch;
+            right: -150%;
+            z-index: -1;
+            top: -30px;
+            width: calc(100%+60px);
+            height: calc(100%+50px);
+            padding-right: 45px;
+            background-color: rgba(16,16,16,.6);
+            transition: .5s;
+
+            & .options__inner{
+              background-color: $default-color;
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              & h3.options__title{
+                text-transform: uppercase;
+                letter-spacing: $ls1;
+                font-size: $fz1;
+                text-align: center;
+                padding: 12px;
+                border-bottom: 10px solid $color2;
+              }
+
+              & ul.list{
+                padding-left: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                flex: auto;
+
+                & .list__item{
+                  padding: 10px 45px 10px 0;
+                  font-size: $fz2;
+                  border-bottom: 1px solid $color2;
+                  position: relative;
+
+                  &::after{
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 100%;
+                    height: 100%;
+                    background-size: contain;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                  }
+
+                  & label.checkbox{
+                    width: 11px;
+                    height: 15px;
+                    position: absolute;
+                    right: 15px;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+
+                    & input {
+                      position: absolute;
+                      cursor: pointer;
+                      opacity: 0;
+                      height: 0;
+                      width: 0;
+                      &:checked ~ .checkmark:after {
+                        display: block;
+                      }
+                    }
+
+                    & .checkmark {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      height: 100%;
+                      width: 100%;
+
+                      &::after{
+                        content: "";
+                        position: absolute;
+                        display: none;
+                        left: 9px;
+                        top: 5px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid $color3;
+                        border-width: 0 2px 2px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                      }
+                    }
+                  }
+
+                  &.checked{
+
+                    & span:first-child{
+                      font-weight: $bold;
+                    }
+
+                    & label.checkbox{
+  
+                      & .checkmark {
+  
+                        &::after{
+                          content: "";
+                          position: absolute;
+                          display: none;
+                        }
+                      }
+                    }
+                  }
+                }
+
+                & .list__item:last-child{
+                  border-bottom: none;
+                }
+              }
+
+              & a.button{
+                width: 100%;
+                border: none;
+                background-color: $mainFontColor;
+                font-weight: $bold;
+                color: $default-color;
+                margin: 0;
+                text-transform: inherit;
+                font-size: $fz4;
+                padding: 20px 0;
+                text-align: center;
+              }
+
+              & .options__close{
+                position: absolute;
+                right: -35px;
+                top: 7px;
+                width: 22px;
+                height: 22px;
+
+                & span{
+                  height: 2px;
+                  width: 100%;
+                  background-color: $default-color;
+                  transform: rotate(45deg);
+                  position: absolute;
+                  top: 11px;
+                }
+
+                & span:last-child{
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+
+            &.open{
+              right: -30px;
+              z-index: 1;
+            }
+          }
+
+          
         }
       }
     }

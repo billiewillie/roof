@@ -31,3 +31,44 @@ $(".offer__slider .list").slick({
     }
   ]
 });
+
+const listItem = Array.from(document.querySelectorAll('.list__item'));
+
+for(let i = 0; i < listItem.length; i++){
+  listItem[i].addEventListener('click', function(e) {
+    listItem[i].classList.toggle('checked');
+    const checkBox = e.target.children[2].children[0];
+    if (checkBox.checked == true){
+      checkBox.checked = false;
+    } else {
+      checkBox.checked = true;
+    }
+  })
+}
+
+const addBtn = Array.from(document.querySelectorAll('a.additional__button'));
+
+for(let i = 0; i < addBtn.length; i++) {
+  addBtn[i].addEventListener('click', function(e) {
+    e.target.parentNode.children[4].classList.add('open');
+  })
+}
+
+
+const optionsClose = Array.from(document.querySelectorAll('.options__close'));
+
+for(let i = 0; i < addBtn.length; i++) {
+  optionsClose[i].addEventListener('click', function(e) {
+    console.log(e.target.parentNode.parentNode.parentNode);
+    e.target.parentNode.parentNode.parentNode.classList.remove('open');
+  })
+}
+
+
+const offerBtn = Array.from(document.querySelectorAll('.offer__item a.button'));
+
+for(let i = 0; i < addBtn.length; i++) {
+  offerBtn[i].addEventListener('click', function(e) {
+    e.target.parentNode.parentNode.classList.remove('open');
+  })
+}
