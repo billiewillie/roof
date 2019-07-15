@@ -404,9 +404,10 @@ section.offer {
           
         }
 
-        & form.offer__item:nth-child(2){
+        & form.offer__item.pink{
           & .offer__item--about{
             & h3.offer__item--title{
+              color: $default-color;
               &::before {
                 transform: translate(-50%, -50%) rotate(2.45deg);
                 width: 309px;
@@ -421,7 +422,7 @@ section.offer {
           }
         }
 
-        & form.offer__item:nth-child(3){
+        & form.offer__item.red{
           & .offer__item--about{
             & h3.offer__item--title{
               color: $default-color;
@@ -436,6 +437,55 @@ section.offer {
 
           & button.button{
             background-color: $pink;
+          }
+        }
+
+        & form.offer__item.party{
+          & .offer__item--about{
+            padding: 100px 20px 70px;
+            & h3.offer__item--title{
+              color: $default-color;
+              font-family: $mainFont;
+              color: $mainFontColor;
+              font-weight: $bold;
+              font-size: $fz8;
+              text-transform: uppercase;
+              margin-bottom: 5px;
+
+              &::before {
+                display: none;
+              }
+            }
+
+            & p{
+              margin-bottom: 30px;
+              font-style: italic;
+              font-weight: $medium;
+              font-size: $fz4;
+            }
+
+            & select.select:last-child{
+              margin-bottom: 0;
+            }
+
+            &::before{
+              display: block;
+              position: absolute;
+              content: '';
+              left: 0;
+              top: 0;
+              width: 80%;
+              height: 100%;
+              background-image: url('/assets/img/party.png');
+              background-size: contain;
+              background-position: 0% 0%;
+              background-repeat: no-repeat;
+              z-index: -1;
+            }
+          }
+
+          & button.button{
+            background-color: $default-color;
           }
         }
       }

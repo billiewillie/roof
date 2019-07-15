@@ -45,7 +45,7 @@ section.offer
               .options__close
                 span
                 span
-        form.offer__item(action="")
+        form.offer__item.pink(action="")
           .offer__item--about
             h3.offer__item--title Pink
             span.select__title Кол-во часов
@@ -82,7 +82,7 @@ section.offer
               .options__close
                 span
                 span
-        form.offer__item(action="")
+        form.offer__item.red(action="")
           .offer__item--about
             h3.offer__item--title Red
             span.select__title Кол-во часов
@@ -119,13 +119,20 @@ section.offer
               .options__close
                 span
                 span
-        form.offer__item(action="")
+        form.offer__item.party(action="")
           .offer__item--about
-            h3.offer__item--title Вечеринка              
+            h3.offer__item--title Вечеринка      
+            p более 2 человек         
             span.select__title Кол-во часов
             select.select
               for i in hours
                 option=i.time
+            span.select__title Кол-во человек
+            select.select
+              option до 10
+              option 10 - 25
+              option 25 - 50
+              option 50+
           .offer__price
             span.offer__price--title Итого:
             span.offer__price--sum 12 000 р.
