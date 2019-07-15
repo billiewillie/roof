@@ -1,6 +1,7 @@
 // import * as photostack from 'photostack'
 import "slick-carousel";
 import * as burger from "./component/nav";
+// import * as arrows from "./component/arrows";
 import * as accordion from "./component/accordion";
 
 $(".slider").slick({
@@ -11,6 +12,15 @@ $(".slider").slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplaySpeed: 5000
+});
+
+$(".offer__list").slick({
+  dots: false,
+  arrows: true,
+  infinite: false,
+  autoplay: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
 });
 
 $(".offer__slider .list").slick({
@@ -43,7 +53,7 @@ for(let i = 0; i < listItem.length; i++){
     } else {
       checkBox.checked = true;
     }
-  })
+  });
 }
 
 const addBtn = Array.from(document.querySelectorAll('a.additional__button'));

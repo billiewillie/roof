@@ -1,6 +1,20 @@
 section.offer {
   margin-bottom: 40px;
 
+  .slick-next.slick-disabled:before, 
+  .slick-prev.slick-disabled:before {
+    opacity: 0;
+  }
+
+  .slick-next {
+    right: 10px;
+  }
+
+  .slick-prev {
+    left: 10px;
+    z-index: 1;
+  }
+
   & .container {
     padding: 0;
 
@@ -40,11 +54,15 @@ section.offer {
 
     & .content {
       & .offer__list {
-        padding: 30px 30px 20px;
+        // padding: 30px 30px 20px;
         background-color: $color2;
+        display: flex;
 
         & form.offer__item {
           position: relative;
+          z-index: 1;
+          min-width: 100%;
+          padding: 30px 30px 20px;
 
           & .offer__item--about {
             padding: 40px 20px 20px;
@@ -169,6 +187,13 @@ section.offer {
               margin: auto;
               color: $color5;
               line-height: 2;
+              display: none;
+            }
+
+            &.checked{
+              & span.check {
+                display: block;
+              }
             }
           }
 
@@ -206,12 +231,13 @@ section.offer {
           & .options{
             position: absolute;
             display: flex;
+            opacity: 0;
             align-items: stretch;
             right: -150%;
             z-index: -1;
-            top: -30px;
-            width: calc(100%+60px);
-            height: calc(100%+50px);
+            top: 0px;
+            width: 100%;
+            height: 100%;
             padding-right: 45px;
             background-color: rgba(16,16,16,.6);
             transition: .5s;
@@ -244,6 +270,10 @@ section.offer {
                   font-size: $fz2;
                   border-bottom: 1px solid $color2;
                   position: relative;
+
+                  & span{
+                    display: block;
+                  }
 
                   &::after{
                     display: block;
@@ -366,12 +396,47 @@ section.offer {
             }
 
             &.open{
-              right: -30px;
+              right: 0px;
               z-index: 1;
+              opacity: 1;
+            }
+          }
+          
+        }
+
+        & form.offer__item:nth-child(2){
+          & .offer__item--about{
+            & h3.offer__item--title{
+              &::before {
+                transform: translate(-50%, -50%) rotate(2.45deg);
+                width: 309px;
+                height: 104px;
+                background-image: url("/assets/img/brush/offer-brush-pink.png");
+              }
             }
           }
 
-          
+          & button.button{
+            background-color: $pink;
+          }
+        }
+
+        & form.offer__item:nth-child(3){
+          & .offer__item--about{
+            & h3.offer__item--title{
+              color: $default-color;
+              &::before {
+                transform: translate(-50%, -50%) rotate(5.8deg);
+                width: 350px;
+                height: 200px;
+                background-image: url("/assets/img/brush/offer-brush-red.png");
+              }
+            }
+          }
+
+          & button.button{
+            background-color: $pink;
+          }
         }
       }
     }
