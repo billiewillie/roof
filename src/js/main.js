@@ -1,18 +1,11 @@
 // import * as photostack from 'photostack'
 import "slick-carousel";
+// require("./component/lightbox.js");
+import "lightbox2";
+// import * as lightbox from "./component/lightbox";
 import * as burger from "./component/nav";
-// import * as arrows from "./component/arrows";
+import * as scroll from "./component/scroll";
 import * as accordion from "./component/accordion";
-
-$(".slider").slick({
-  dots: true,
-  arrows: true,
-  infinite: true,
-  autoplay: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplaySpeed: 5000
-});
 
 $(".offer__list").slick({
   dots: false,
@@ -20,6 +13,15 @@ $(".offer__list").slick({
   infinite: false,
   autoplay: false,
   slidesToShow: 1,
+  slidesToScroll: 1,
+});
+
+$(".slider").slick({
+  dots: true,
+  arrows: true,
+  infinite: true,
+  autoplay: false,
+  slidesToShow: 3,
   slidesToScroll: 1,
 });
 
