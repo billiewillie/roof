@@ -118,6 +118,10 @@ module.exports = {
       {
         from: `${PATHS.src}/fonts`,
         to: `${PATHS.assets}fonts`
+      },
+      {
+        from: `${PATHS.src}/php`,
+        to: `${PATHS.assets}php`
       }
       // {
       //   from: `${PATHS.src}/data`,

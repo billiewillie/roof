@@ -45,7 +45,7 @@ section.present {
     text-align: center;
     margin-top: -26px;
 
-    & button.button {
+    & a.button {
       text-transform: uppercase;
       padding: 15px;
       border: 2px solid $mainFontColor;
@@ -53,6 +53,10 @@ section.present {
       background-color: $default-color;
       font-weight: $medium;
       margin-bottom: 0;
+      display: inline-block;
+      color: $mainFontColor;
+      position: relative;
+      z-index: 1;
     }
   }
 }
