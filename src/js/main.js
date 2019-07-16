@@ -1,8 +1,7 @@
 // import * as photostack from 'photostack'
 import "slick-carousel";
-// require("./component/lightbox.js");
 import "lightbox2";
-// import * as lightbox from "./component/lightbox";
+import calc from "./component/calc";
 import * as burger from "./component/nav";
 import * as scroll from "./component/scroll";
 import * as accordion from "./component/accordion";
@@ -44,19 +43,19 @@ $(".offer__slider .list").slick({
   ]
 });
 
-const listItem = Array.from(document.querySelectorAll('.list__item'));
+// const listItem = Array.from(document.querySelectorAll('.list__item'));
 
-for(let i = 0; i < listItem.length; i++){
-  listItem[i].addEventListener('click', function(e) {
-    listItem[i].classList.toggle('checked');
-    const checkBox = e.target.children[2].children[0];
-    if (checkBox.checked == true){
-      checkBox.checked = false;
-    } else {
-      checkBox.checked = true;
-    }
-  });
-}
+// for(let i = 0; i < listItem.length; i++){
+//   listItem[i].addEventListener('click', function(e) {
+//     listItem[i].classList.toggle('checked');
+//     const checkBox = e.target.children[2].children[0];
+//     if (checkBox.checked == true){
+//       checkBox.checked = false;
+//     } else {
+//       checkBox.checked = true;
+//     }
+//   });
+// }
 
 const addBtn = Array.from(document.querySelectorAll('a.additional__button'));
 
@@ -84,3 +83,23 @@ for(let i = 0; i < addBtn.length; i++) {
     e.target.parentNode.parentNode.classList.remove('open');
   })
 }
+
+$(document).ready(function() {
+	//E-mail Ajax Send
+	$("form.form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "./assets/php/mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			alert("Спасибо! Мы с вами скоро свяжемся.");
+			setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	});
+
+});

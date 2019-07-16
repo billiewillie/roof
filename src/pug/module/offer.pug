@@ -1,5 +1,4 @@
 - var service = [{title: 'Живая музыка', price: "(+2500 р.)"},{title: 'Профессиональная фотосессия', price: "(+2500 р.)"},{title: 'Лепестки роз (на столе или путь от лифта к шатру)', price: "(+1000 р.)"},{title: 'Дизайнерский букет', price: "(+2500 р.)"},{title: 'Декор воздушными шарами', price: "(+1500 р.)"},{title: 'Прокат фотоаппарата InstaX (+ кассета на 10 снимков)', price: "(+2000 р.)"},{title: 'Урок по сальсе с профессиональным преподавателем', price: "(+2000 р./час)"},{title: 'Дополнительный час', price: "(+1000 р.)"}]
-- var hours = [{time: '2 часа'},{time: '3 часа'},{time: '4 часа'},{time: '5 часов'},{time: '6 часов'},{time: '7 часов'},{time: '8 часов'},{time: '9 часов'},{time: '10 часов'},{time: '10+ часов'}]
 
 section.offer.hidden__md
   .container
@@ -8,13 +7,14 @@ section.offer.hidden__md
       p Для Вас мы подготовили несколько предложений, каждое из которых позволит создать особое впечатление от события.
     .content
       .offer__list
-        form.offer__item(action="")
+        form.offer__item.regular
           .offer__item--about
             h3.offer__item--title White
             span.select__title Кол-во часов
-            select.select
-              for i in hours
-                option=i.time
+            select.select.select__time
+              option 2 часа
+              option 3 часа
+              option 4 часа
             .offer__item--included
               h3 Что входит в пакет:
               ul
@@ -45,13 +45,14 @@ section.offer.hidden__md
               .options__close
                 span
                 span
-        form.offer__item.pink(action="")
+        form.offer__item.pink
           .offer__item--about
             h3.offer__item--title Pink
             span.select__title Кол-во часов
-            select.select
-              for i in hours
-                option=i.time
+            select.select.select__time
+              option 2 часа
+              option 3 часа
+              option 4 часа
             .offer__item--included
               h3 Что входит в пакет:
               ul
@@ -82,13 +83,13 @@ section.offer.hidden__md
               .options__close
                 span
                 span
-        form.offer__item.red(action="")
+        form.offer__item.red
           .offer__item--about
             h3.offer__item--title Red
             span.select__title Кол-во часов
-            select.select
-              for i in hours
-                option=i.time
+            select.select.select__time
+              option 3 часа
+              option 4 часа
             .offer__item--included
               h3 Что входит в пакет:
               ul
@@ -102,7 +103,7 @@ section.offer.hidden__md
             span.check &#10003;
           .offer__price
             span.offer__price--title Итого:
-            span.offer__price--sum 13 500 р.
+            span.offer__price--sum 13 000 р.
           button.button забронировать
           .options
             .options__inner
@@ -119,20 +120,20 @@ section.offer.hidden__md
               .options__close
                 span
                 span
-        form.offer__item.party(action="")
+        form.offer__item.party
           .offer__item--about
             h3.offer__item--title Вечеринка      
             p более 2 человек         
             span.select__title Кол-во часов
-            select.select
-              for i in hours
-                option=i.time
+            select.select.select__time(disabled)
+              option 4 часа
             span.select__title Кол-во человек
             select.select
               option до 10
               option 10 - 25
               option 25 - 50
               option 50+
+            p Дополнительный час (+ 1000 p.)
           .offer__price
             span.offer__price--title Итого:
             span.offer__price--sum 12 000 р.

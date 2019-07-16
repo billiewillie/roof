@@ -1,9 +1,14 @@
-form.form(action="")
+form.form
+  input(type="hidden" name="project_name" value="spb-panorama")
+  input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+  input(type="hidden" name="form_subject" value="Заявка с общей формы")
   .form__field
-    input.input(type="text" placeholder="Ваше имя")
+    input.input(type="text" placeholder="" name='empty')
   .form__field
-    input.input(type="text" placeholder="Ваш e-mail")
+    input.input(type="text" placeholder="Ваше имя" name='name' required)
   .form__field
-    input.input(type="text" placeholder="Контактный телефон")
+    input.input(type="text" placeholder="Ваш e-mail" name='email' required)
   .form__field
-    button.button(type='submit') отправить
+    input.input(type="text" placeholder="Контактный телефон" name='phone' required)
+  .form__field
+    button.button отправить
