@@ -46,6 +46,31 @@ function calc(){
     const options = Array.from(offer.querySelectorAll('li.list__item'));
     const hours = offer.querySelector('select.select.select__time');
     const people = document.querySelector('form.offer__item.party select.select.select__people');
+    const addBtn = offer.querySelector('a.additional__button');
+    const optionsClose = offer.querySelector('.options__close');
+    const offerBtn = offer.querySelector('.options a.button');
+    const contactBtn = offer.querySelector('a.button.contact__btn');
+    const closeBtn = offer.querySelector('.offer__item--contact a.close');
+
+    addBtn.addEventListener('click', function(e) {
+      e.target.parentNode.children[7].classList.add('open');
+    });
+
+    optionsClose.addEventListener('click', function(e) {
+      e.target.parentNode.parentNode.parentNode.classList.remove('open');
+    });
+
+    offerBtn.addEventListener('click', function(e) {
+      e.target.parentNode.parentNode.classList.remove('open');
+    });
+
+    contactBtn.addEventListener('click', function(e) {
+      e.target.parentNode.children[8].classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', function(e) {
+      e.target.parentNode.classList.remove('open');
+    });
 
     for(let i = 0; i < options.length; i++) {
       const checkBox = options[i].children[2].children[0];

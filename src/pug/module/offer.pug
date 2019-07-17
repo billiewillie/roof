@@ -7,14 +7,17 @@ section.offer.hidden__md
       p Для Вас мы подготовили несколько предложений, каждое из которых позволит создать особое впечатление от события.
     .content
       .offer__list
-        form.offer__item.regular
+        form.form.offer__item.regular
+          input(type="hidden" name="project_name" value="spb-panorama")
+          input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+          input(type="hidden" name="form_subject" value="Заявка пакет White")
           .offer__item--about
             h3.offer__item--title White
             span.select__title Кол-во часов
-            select.select.select__time
-              option 2 часа
-              option 3 часа
-              option 4 часа
+            select.select.select__time(name='select-time')
+              option(value="2 часа") 2 часа
+              option(value="3 часа") 3 часа
+              option(value="4 часа") 4 часа
             .offer__item--included
               h3 Что входит в пакет:
               ul
@@ -29,23 +32,77 @@ section.offer.hidden__md
           .offer__price
             span.offer__price--title Итого:
             span.offer__price--sum 5 500 р.
-          button.button связаться с нами
+          a.button.contact__btn связаться с нами
           .options
             .options__inner
               h3.options__title Дополнительные услуги
               ul.list
-                for i in service
-                  li.list__item
-                    span.title=i.title
-                    span.price=i.price
-                    label.checkbox
-                      input(type="checkbox")
-                      span.checkmark
+                li.list__item
+                  span.title Живая музыка
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Живая музыка')
+                    span.checkmark
+                li.list__item
+                  span.title Профессиональная фотосессия
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Лепестки роз (на столе или путь от лифта к шатру)
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Лепестки роз (на столе или путь от лифта к шатру)')
+                    span.checkmark
+                li.list__item
+                  span.title Дизайнерский букет
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дизайнерский букет')
+                    span.checkmark
+                li.list__item
+                  span.title Декор воздушными шарами
+                  span.price (+1500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Декор воздушными шарами')
+                    span.checkmark
+                li.list__item
+                  span.title Прокат фотоаппарата InstaX (+ кассета на 10 снимков)
+                  span.price (+2000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Урок по сальсе с профессиональным преподавателем
+                  span.price (+2000/ч р.)
+                  label.checkbox
+                    input(type="checkbox" name='Урок по сальсе с профессиональным преподавателем')
+                    span.checkmark
+                li.list__item
+                  span.title Дополнительный час
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дополнительный час')
+                    span.checkmark
               a.button Применить к пакету
               .options__close
                 span
                 span
-        form.offer__item.pink
+          .offer__item--contact
+            a.close
+            .form__field
+              input.input(type="text" placeholder="Ваше имя" name='name' required)
+            .form__field
+              input.input(type="text" placeholder="Ваш e-mail" name='email' required)
+            .form__field
+              input.input(type="text" placeholder="Контактный телефон" name='phone' required)
+            .form__field
+              button.button отправить
+        form.form.offer__item.pink
+          input(type="hidden" name="project_name" value="spb-panorama")
+          input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+          input(type="hidden" name="form_subject" value="Заявка пакет Pink")
           .offer__item--about
             h3.offer__item--title Pink
             span.select__title Кол-во часов
@@ -67,27 +124,81 @@ section.offer.hidden__md
           .offer__price
             span.offer__price--title Итого:
             span.offer__price--sum 6 500 р.
-          button.button связаться с нами
+          a.button.contact__btn связаться с нами
           .options
             .options__inner
               h3.options__title Дополнительные услуги
               ul.list
-                for i in service
-                  li.list__item
-                    span.title=i.title
-                    span.price=i.price
-                    label.checkbox
-                      input(type="checkbox")
-                      span.checkmark
+                li.list__item
+                  span.title Живая музыка
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Живая музыка')
+                    span.checkmark
+                li.list__item
+                  span.title Профессиональная фотосессия
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Лепестки роз (на столе или путь от лифта к шатру)
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Лепестки роз (на столе или путь от лифта к шатру)')
+                    span.checkmark
+                li.list__item
+                  span.title Дизайнерский букет
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дизайнерский букет')
+                    span.checkmark
+                li.list__item
+                  span.title Декор воздушными шарами
+                  span.price (+1500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Декор воздушными шарами')
+                    span.checkmark
+                li.list__item
+                  span.title Прокат фотоаппарата InstaX (+ кассета на 10 снимков)
+                  span.price (+2000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Урок по сальсе с профессиональным преподавателем
+                  span.price (+2000/ч р.)
+                  label.checkbox
+                    input(type="checkbox" name='Урок по сальсе с профессиональным преподавателем')
+                    span.checkmark
+                li.list__item
+                  span.title Дополнительный час
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дополнительный час')
+                    span.checkmark
               a.button Применить к пакету
               .options__close
                 span
                 span
-        form.offer__item.red
+          .offer__item--contact
+            a.close
+            .form__field
+              input.input(type="text" placeholder="Ваше имя" name='name' required)
+            .form__field
+              input.input(type="text" placeholder="Ваш e-mail" name='email' required)
+            .form__field
+              input.input(type="text" placeholder="Контактный телефон" name='phone' required)
+            .form__field
+              button.button отправить
+        form.form.offer__item.red
+          input(type="hidden" name="project_name" value="spb-panorama")
+          input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+          input(type="hidden" name="form_subject" value="Заявка пакет Red")
           .offer__item--about
             h3.offer__item--title Red
             span.select__title Кол-во часов
-            select.select.select__time
+            select.select.select__time(name='select-time')
               option 3 часа
               option 4 часа
             .offer__item--included
@@ -104,40 +215,163 @@ section.offer.hidden__md
           .offer__price
             span.offer__price--title Итого:
             span.offer__price--sum 13 000 р.
-          button.button связаться с нами
+          a.button.contact__btn связаться с нами
           .options
             .options__inner
               h3.options__title Дополнительные услуги
               ul.list
-                for i in service
-                  li.list__item
-                    span.title=i.title
-                    span.price=i.price
-                    label.checkbox
-                      input(type="checkbox")
-                      span.checkmark
+                li.list__item
+                  span.title Живая музыка
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Живая музыка')
+                    span.checkmark
+                li.list__item
+                  span.title Профессиональная фотосессия
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Лепестки роз (на столе или путь от лифта к шатру)
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Лепестки роз (на столе или путь от лифта к шатру)')
+                    span.checkmark
+                li.list__item
+                  span.title Дизайнерский букет
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дизайнерский букет')
+                    span.checkmark
+                li.list__item
+                  span.title Декор воздушными шарами
+                  span.price (+1500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Декор воздушными шарами')
+                    span.checkmark
+                li.list__item
+                  span.title Прокат фотоаппарата InstaX (+ кассета на 10 снимков)
+                  span.price (+2000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Урок по сальсе с профессиональным преподавателем
+                  span.price (+2000/ч р.)
+                  label.checkbox
+                    input(type="checkbox" name='Урок по сальсе с профессиональным преподавателем')
+                    span.checkmark
+                li.list__item
+                  span.title Дополнительный час
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дополнительный час')
+                    span.checkmark
               a.button Применить к пакету
               .options__close
                 span
                 span
-        form.offer__item.party
+          .offer__item--contact
+            a.close
+            .form__field
+              input.input(type="text" placeholder="Ваше имя" name='name' required)
+            .form__field
+              input.input(type="text" placeholder="Ваш e-mail" name='email' required)
+            .form__field
+              input.input(type="text" placeholder="Контактный телефон" name='phone' required)
+            .form__field
+              button.button отправить
+        form.form.offer__item.party
+          input(type="hidden" name="project_name" value="spb-panorama")
+          input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+          input(type="hidden" name="form_subject" value="Заявка пакет Party")
           .offer__item--about
             h3.offer__item--title Вечеринка      
             p более 2 человек         
             span.select__title Кол-во часов
-            select.select.select__time(disabled)
+            select.select.select__time(disabled name='select-time')
               option 4 часа
             span.select__title Кол-во человек
-            select.select.select__people
+            select.select.select__people(name='select-people')
               option до 10
               option 10 - 25
               option 25 - 50
             p Дополнительный час (+ 1500 p.)
             p Если более 50 человек - цена обговаривается индивидуально
+          a.additional__button Дополнительные услуги
+            span.plus +
+            span.check &#10003;
           .offer__price
             span.offer__price--title Итого:
             span.offer__price--sum 12 000 р.
-          button.button связаться с нами
+          a.button.contact__btn связаться с нами
+          .options
+            .options__inner
+              h3.options__title Дополнительные услуги
+              ul.list
+                li.list__item
+                  span.title Живая музыка
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Живая музыка')
+                    span.checkmark
+                li.list__item
+                  span.title Профессиональная фотосессия
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Лепестки роз (на столе или путь от лифта к шатру)
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Лепестки роз (на столе или путь от лифта к шатру)')
+                    span.checkmark
+                li.list__item
+                  span.title Дизайнерский букет
+                  span.price (+2500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дизайнерский букет')
+                    span.checkmark
+                li.list__item
+                  span.title Декор воздушными шарами
+                  span.price (+1500 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Декор воздушными шарами')
+                    span.checkmark
+                li.list__item
+                  span.title Прокат фотоаппарата InstaX (+ кассета на 10 снимков)
+                  span.price (+2000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Профессиональная фотосессия')
+                    span.checkmark
+                li.list__item
+                  span.title Урок по сальсе с профессиональным преподавателем
+                  span.price (+2000/ч р.)
+                  label.checkbox
+                    input(type="checkbox" name='Урок по сальсе с профессиональным преподавателем')
+                    span.checkmark
+                li.list__item
+                  span.title Дополнительный час
+                  span.price (+1000 р.)
+                  label.checkbox
+                    input(type="checkbox" name='Дополнительный час')
+                    span.checkmark
+              a.button Применить к пакету
+              .options__close
+                span
+                span
+          .offer__item--contact
+            a.close
+            .form__field
+              input.input(type="text" placeholder="Ваше имя" name='name' required)
+            .form__field
+              input.input(type="text" placeholder="Ваш e-mail" name='email' required)
+            .form__field
+              input.input(type="text" placeholder="Контактный телефон" name='phone' required)
+            .form__field
+              button.button отправить
     .offer__slider
       ul.list
         li.list__item 

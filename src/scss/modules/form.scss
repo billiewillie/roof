@@ -21,11 +21,7 @@ form.form {
     }
   }
 
-  & .form__field:nth-child(4) {
-    display: none;
-  }
-
-  & .form__field:nth-child(7) {
+  & .form__field:nth-last-child(2) {
     margin-bottom: 40px;
   }
 
