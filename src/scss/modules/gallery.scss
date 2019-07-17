@@ -3,7 +3,7 @@ section.gallery {
   background-image: url("/assets/img/slider-bg.png");
   background-repeat: no-repeat;
   background-position: 50% 100%;
-  background-size: 75%;
+  background-size: auto 90%;
 
   & .container {
     & h2.title {
