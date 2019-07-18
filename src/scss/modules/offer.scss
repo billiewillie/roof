@@ -658,6 +658,7 @@ section.offer {
           display: flex;
           flex-direction: column;
           margin-bottom: 40px;
+          min-height: 1200px;
 
           & .nav-tabs{
             display: flex;
@@ -715,6 +716,7 @@ section.offer {
                   & .tab__inner--content{
                     border: 1px solid rgba(16,16,16,.5);
                     padding: 25px 30px; 
+                  
 
                     & p.checklist__title{
                       font-weight: $medium;
@@ -723,7 +725,60 @@ section.offer {
                     }
 
                     & .checklist{
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: flex-end;
 
+                      & li.list__item{
+                        padding-left: 30px;
+                        position: relative; 
+                        font-size: $fz6; 
+                        margin-bottom: 10px; 
+                        
+                        & span.title{
+                          font-weight: $bold;
+                          display: inline-block;
+                          margin-right: 5px;
+                        }
+
+                        & label.checkbox{
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          width: 18px;
+                          height: 18px;
+                          border-radius: 5px;
+                          background-color: $default-color;
+                        }
+                      }
+
+                      & .order{
+                        text-align: center;
+                        padding-bottom: 25px;
+
+                        & span {
+                          display: block;
+
+                          &.title{
+                            font-size: $fz2;
+                          }
+
+                          &.price{
+                            font-weight: $bold;
+                            font-size: $fz13;
+                            margin-bottom: 20px;
+                          }
+                        }
+                        
+                        & a.button{
+                          display: block;
+                          border: 2px solid $mainFontColor;
+                          color: $mainFontColor;
+                          background-color: $default-color;
+                          font-size: $fz2;
+                          font-weight: $medium;
+                        }
+                      }
                     }
                   }
                 }
