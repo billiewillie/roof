@@ -628,7 +628,7 @@ section.offer {
     margin-bottom: 70px;
 
     & .container {
-      padding: 0;
+      padding: 0 10px;
 
       & .offer__slider {
         display: none;
@@ -706,16 +706,60 @@ section.offer {
                 & .tab__inner--list{
                   display: none;
                   background-color: $color9;
-                  width: 100%;
                   position: absolute;
-                  left: 0;
-                  top: 100%;
+                  left: -61px;
+                  top: calc(100%+30px);
                   padding: 0 60px 20px;
+
+                  & .tab__inner--content{
+                    border: 1px solid rgba(16,16,16,.5);
+                    padding: 25px 45px; 
+                  }
                 }
 
                 &.active{
+                  border: 1px solid rgba(16,16,16,.5);
+                  border-bottom: none;
+                  position: relative;
+
                   & .tab__inner--list{
                     display: block;
+                  }
+
+                  & span.bottom{
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    left: -1px;
+                    top: 100%;
+                    width: calc(100%+2px);
+                    height: 31px;
+                    border-left: 1px solid rgba(16,16,16,.5);
+                    border-right: 1px solid rgba(16,16,16,.5);
+                    border-bottom: 1px solid $color9;
+                    background-color: transparent;
+                    z-index: 1;
+                  }
+                }
+
+                &:nth-child(2){
+                  &.active{
+
+                    & .tab__inner--list{
+                      left: 50%;
+                      transform: translateX(-50%);
+                      margin: auto;
+                    }
+                  }
+                }
+
+                &:nth-child(3){
+                  &.active{
+
+                    & .tab__inner--list{
+                      left: auto;
+                      right: -61px;
+                    }
                   }
                 }
               }

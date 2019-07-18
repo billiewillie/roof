@@ -7,6 +7,9 @@ import * as burger from "./component/nav";
 import * as scroll from "./component/scroll";
 import * as accordion from "./component/accordion";
 
+
+$('.tab__inner--list').css('width', $('.tabs').width());
+
 $(".offer__list").slick({
   dots: false,
   arrows: true,
