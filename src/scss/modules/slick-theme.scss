@@ -5,16 +5,16 @@
   line-height: 0;
 
   position: absolute;
-  top: 50%;
+  top: 35%;
 
   display: block;
 
-  width: 15px;
-  height: 20px;
+  width: 30px;
+  height: 40px;
   padding: 0;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0, 0%);
+  -ms-transform: translate(0, 0%);
+  transform: translate(0, 0%);
 
   cursor: pointer;
 
@@ -51,8 +51,8 @@
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 40px;
   background-image: url("/assets/img/icons/slick-arrow.svg");
   background-repeat: no-repeat;
   background-position: 50%;
@@ -62,6 +62,7 @@
 .slick-prev {
   left: -10px;
   transform: rotate(180deg);
+  z-index: 1;
 }
 [dir="rtl"] .slick-prev {
   right: -25px;

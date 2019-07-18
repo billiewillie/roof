@@ -156,6 +156,21 @@ button {
   border: none;
   font-size: 100%;
   margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+select{
+  background-image: url('/assets/img/icons/arrow-down.svg');
+  background-size: auto 50%;
+  background-position: 90% 20%;
+  background-repeat: no-repeat;
+}
+
+.select-css::-ms-expand {
+	display: none;
 }
 
 button,

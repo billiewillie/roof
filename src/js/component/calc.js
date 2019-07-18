@@ -42,7 +42,9 @@ function calc(){
   
   function calcForm(offer, special, initSum){
     let sum = initSum;
-    offer.querySelector('span.offer__price--sum').innerHTML = sum + ' p.';
+
+    offer.querySelector('input.offer__price--sum').value = sum + ' p.';
+
     const options = Array.from(offer.querySelectorAll('li.list__item'));
     const hours = offer.querySelector('select.select.select__time');
     const people = document.querySelector('form.offer__item.party select.select.select__people');
@@ -78,43 +80,36 @@ function calc(){
         options[i].classList.toggle('checked');
         if(checkBox.checked == true && special === true && i === 3) {
           options[i].classList.add('checked');
-          offer.querySelector('span.offer__price--sum').innerHTML = ' p.';
+          offer.querySelector('input.offer__price--sum').value = ' p.';
         } else if (checkBox.checked == true){
           checkBox.checked = false;
           sum -= services[i].price;
-          offer.querySelector('span.offer__price--sum').innerHTML = sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = sum + ' p.';
         } else {
           checkBox.checked = true;
           sum += services[i].price;
-          offer.querySelector('span.offer__price--sum').innerHTML = sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = sum + ' p.';
         }
       })
-
-      if(special === true) {
-        options[3].classList.add('checked');
-        options[3].children[2].children[0].checked = true;
-        options[3].children[2].children[0].disabled = true;
-      }
-      
     }
 
     for(let i = 0; i < hours.children.length; i++) {
       hours.addEventListener('change', function(e) {
         if(hours.children[1].selected === true) {
-          offer.querySelector('span.offer__price--sum').innerHTML = 1000 + sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = 1000 + sum + ' p.';
         } else if(hours.children[2].selected === true) {
-          offer.querySelector('span.offer__price--sum').innerHTML = 1500 + sum + ' p.';
-        } else offer.querySelector('span.offer__price--sum').innerHTML = sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = 1500 + sum + ' p.';
+        } else offer.querySelector('input.offer__price--sum').value = sum + ' p.';
       })
     }
       
     for(let i = 0; i < people.children.length; i++){
       people.addEventListener('change', function(e) {
         if(people.children[1].selected === true) {
-          offer.querySelector('span.offer__price--sum').innerHTML = 9000 + sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = 9000 + sum + ' p.';
         } else if(people.children[2].selected === true) {
-          offer.querySelector('span.offer__price--sum').innerHTML = 17000 + sum + ' p.';
-        } else offer.querySelector('span.offer__price--sum').innerHTML = sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = 17000 + sum + ' p.';
+        } else offer.querySelector('input.offer__price--sum').value = sum + ' p.';
       })
     }
   }

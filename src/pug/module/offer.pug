@@ -1,12 +1,12 @@
 - var service = [{title: 'Живая музыка', price: "(+2500 р.)"},{title: 'Профессиональная фотосессия', price: "(+2500 р.)"},{title: 'Лепестки роз (на столе или путь от лифта к шатру)', price: "(+1000 р.)"},{title: 'Дизайнерский букет', price: "(+2500 р.)"},{title: 'Декор воздушными шарами', price: "(+1500 р.)"},{title: 'Прокат фотоаппарата InstaX (+ кассета на 10 снимков)', price: "(+2000 р.)"},{title: 'Урок по сальсе с профессиональным преподавателем', price: "(+2000 р./час)"},{title: 'Дополнительный час', price: "(+1000 р.)"}]
 
-section.offer.hidden__md
+section.offer#offer
   .container
     .offer__top
       h2.title Пакетные </br> предложения
       p Для Вас мы подготовили несколько предложений, каждое из которых позволит создать особое впечатление от события.
     .content
-      .offer__list
+      .offer__list.hidden__md
         form.form.offer__item.regular
           input(type="hidden" name="project_name" value="spb-panorama")
           input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
@@ -31,7 +31,7 @@ section.offer.hidden__md
             span.check &#10003;
           .offer__price
             span.offer__price--title Итого:
-            span.offer__price--sum 5 500 р.
+            input.offer__price--sum(name='price' value='5 500 р.')
           a.button.contact__btn связаться с нами
           .options
             .options__inner
@@ -86,8 +86,7 @@ section.offer.hidden__md
                     input(type="checkbox" name='Дополнительный час')
                     span.checkmark
               a.button Применить к пакету
-              .options__close
-                span
+              a.options__close
                 span
           .offer__item--contact
             a.close
@@ -118,12 +117,14 @@ section.offer.hidden__md
                 li Удобная мебель
                 li Декоративное освещение
                 li Сезонные фрукты
+                li 
+                  b Цветы и конфеты
           a.additional__button Дополнительные услуги
             span.plus +
             span.check &#10003;
           .offer__price
             span.offer__price--title Итого:
-            span.offer__price--sum 6 500 р.
+            input.offer__price--sum(name='price' value='6 500 р.')
           a.button.contact__btn связаться с нами
           .options
             .options__inner
@@ -151,7 +152,7 @@ section.offer.hidden__md
                   span.title Дизайнерский букет
                   span.price (+2500 р.)
                   label.checkbox
-                    input(type="checkbox" name='Дизайнерский букет')
+                    input(type="checkbox" checked disabled name='Дизайнерский букет')
                     span.checkmark
                 li.list__item
                   span.title Декор воздушными шарами
@@ -207,14 +208,22 @@ section.offer.hidden__md
                 li Вино или горячий чай
                 li Уютные пледы
                 li Удобная мебель
-                li Декоративное освещение
+                li Декоративные освещение
                 li Сезонные фрукты
+                li 
+                  b Цветы и конфеты
+                li 
+                  b Воздушные шары
+                li 
+                  b Профессиональная фотосессия
+                li 
+                  b Живая музыка
           a.additional__button Дополнительные услуги
             span.plus +
             span.check &#10003;
           .offer__price
             span.offer__price--title Итого:
-            span.offer__price--sum 13 000 р.
+            input.offer__price--sum(name='price' value='13 000 р.')
           a.button.contact__btn связаться с нами
           .options
             .options__inner
@@ -242,7 +251,7 @@ section.offer.hidden__md
                   span.title Дизайнерский букет
                   span.price (+2500 р.)
                   label.checkbox
-                    input(type="checkbox" name='Дизайнерский букет')
+                    input(type="checkbox" checked disabled name='Дизайнерский букет')
                     span.checkmark
                 li.list__item
                   span.title Декор воздушными шарами
@@ -304,7 +313,7 @@ section.offer.hidden__md
             span.check &#10003;
           .offer__price
             span.offer__price--title Итого:
-            span.offer__price--sum 12 000 р.
+            input.offer__price--sum(name='price' value='12 000 р.')
           a.button.contact__btn связаться с нами
           .options
             .options__inner
@@ -372,7 +381,31 @@ section.offer.hidden__md
               input.input(type="text" placeholder="Контактный телефон" name='phone' required)
             .form__field
               button.button отправить
-    .offer__slider
+      .tabs.visible__md
+        .nav-tabs
+          a.tab__item.active(href='#tab__content1')
+            h2.title свидание
+            p.subtitle 2 человека
+          a.tab__item(href='#tab__content2')
+            h2.title Вечеринка
+            p.subtitle более 2 человек
+        ul.tab__content
+          li.tab__content--inner.active#tab__content1
+            .tab__inner--item.active
+              p offer 1111
+              .tab__inner--list
+                p tab1111
+            .tab__inner--item
+              p offer 2222
+              .tab__inner--list
+                p tab2222
+            .tab__inner--item(href='#offer3')
+              p offer 3333
+              .tab__inner--list
+                p tab3333
+          li.tab__content--inner#tab__content2
+            p content 2
+    .offer__slider#offer__slider
       ul.list
         li.list__item 
           img(src="./assets/img/offer-slide-1.jpg", alt="slide")
@@ -384,7 +417,7 @@ section.offer.hidden__md
           img(src="./assets/img/offer-slide-4.jpg", alt="slide")
         li.list__item 
           img(src="./assets/img/offer-slide-5.jpg", alt="slide")
-    .conditions
+    .conditions#conditions
       h3.title Условия</br>проведения</br>мероприятия
       p На крышу вы попадете через холл высококлассного бизнес-центра на лифте.
       p Координатор встретит вас, проводит на площадку, ответ на все ваши вопросы и расскажет о технике безопасности.

@@ -1,6 +1,7 @@
 header.header {
   padding: 15px;
   display: flex;
+  min-height: 66px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -77,6 +78,7 @@ header.header {
 
   header.header {
     padding: 20px 10px;
+    min-height: 78px;
 
     & h1.logo {
       font-size: $fz4;

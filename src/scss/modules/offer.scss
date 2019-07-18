@@ -7,11 +7,11 @@ section.offer {
   }
 
   .slick-next {
-    right: 10px;
+    right: 15px;
   }
 
   .slick-prev {
-    left: 10px;
+    left: 15px;
     z-index: 1;
   }
 
@@ -74,6 +74,7 @@ section.offer {
             flex-direction: column;
             align-items: center;
             margin-bottom: 10px;
+            min-height: 534px;
 
             & h3.offer__item--title {
               font-family: $font5;
@@ -205,14 +206,21 @@ section.offer {
             margin-bottom: 15px;
             align-items: flex-end;
 
-            & span.offer__price--title {
+            & input.offer__price--title {
               font-size: $fz2;
             }
 
-            & span.offer__price--sum {
+            & input.offer__price--sum {
               font-size: $fz12;
               font-weight: $bold;
               line-height: 1;
+              margin-bottom: -10px;
+              text-align: right;
+              border: none;
+              background-color: transparent;
+              color: $mainFontColor;
+              width: 100%;
+              font-family: $mainFont;
             }
           }
 
@@ -378,21 +386,21 @@ section.offer {
               & .options__close{
                 position: absolute;
                 right: -35px;
-                top: 7px;
-                width: 22px;
-                height: 22px;
+                top: 5px;
+                width: 30px;
+                height: 30px;
+                background-image: url('/assets/img/icons/cancel.svg');
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-size: contain;
 
                 & span{
-                  height: 2px;
+                  height: 100%;
                   width: 100%;
-                  background-color: $default-color;
-                  transform: rotate(45deg);
+                  background-color: transparent;
                   position: absolute;
-                  top: 11px;
-                }
-
-                & span:last-child{
-                  transform: rotate(-45deg);
+                  top: 0;
+                  left: 0;
                 }
               }
             }
@@ -428,7 +436,7 @@ section.offer {
             }
 
             &.open{
-              bottom: 0%;
+              bottom: -2%;
               opacity: 1;
               z-index: 1;
             }
@@ -622,6 +630,10 @@ section.offer {
     & .container {
       padding: 0;
 
+      & .offer__slider {
+        display: none;
+      }
+
       & .offer__top {
         padding: 0 110px 40px 40%;
 
@@ -639,40 +651,72 @@ section.offer {
 
       & .content {
         & .offer__list {
-          padding: 30px 30px 20px;
-          background-color: $color2;
+          display: none;
+        }
 
-          & .offer__item {
-            & .offer__item--about {
-              padding: 40px 20px 20px;
-              border: 2px solid $default-color;
-              position: relative;
-              z-index: 0;
+        & .tabs{
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 40px;
 
-              & h3.offer__item--title {
-                font-family: $font5;
-                font-size: $fz14;
-                text-align: center;
-                line-height: 88%;
-                position: relative;
-                margin-bottom: 40px;
+          & .nav-tabs{
+            display: flex;
+            justify-content: space-between;
+            & a.tab__item{
+              color: $mainFontColor;
+              width: 49.5%;
+              text-align: center;
+              background-color: $color8;
+              padding: 18px 18px 24px;
 
-                &::before {
-                  display: block;
+              & h2.title{
+                text-transform: uppercase;
+                font-weight: $bold;
+                letter-spacing: $ls2;
+                font-size: $fz8;
+                line-height: $lineHeight2;
+              }
+
+              & p{
+                font-style: italic;
+                font-size: $fz4;
+                font-weight: $medium;
+              }
+
+              &.active{
+                background-color: $color2;
+              }
+            }
+          }
+
+          & ul.tab__content{
+            padding: 35px 60px 30px;
+            background-color: $color2;
+            position: relative;
+
+            & li.tab__content--inner{
+              display: flex;
+              justify-content: space-between;
+
+              & .tab__inner--item{
+                width: 32%;
+                border: 2px solid $default-color;
+                padding: 40px 30px 30px;
+                
+                & .tab__inner--list{
+                  display: none;
+                  background-color: $color9;
+                  width: 100%;
                   position: absolute;
-                  content: "";
                   left: 0;
-                  top: 0;
-                  right: 0;
-                  bottom: 0;
-                  margin: auto;
-                  width: 250px;
-                  height: 96px;
-                  background-image: url("/assets/img/brush/white-brush.png");
-                  background-size: contain;
-                  background-position: 50%;
-                  background-repeat: no-repeat;
-                  z-index: -1;
+                  top: 100%;
+                  padding: 0 60px 20px;
+                }
+
+                &.active{
+                  & .tab__inner--list{
+                    display: block;
+                  }
                 }
               }
             }
@@ -680,9 +724,7 @@ section.offer {
         }
       }
 
-      & .offer__slider {
-        display: none;
-      }
+      
     }
   }
 }

@@ -1,6 +1,6 @@
-- var navLinks = [{link: '#', name: "цены"},{link: '#', name: "фото"},{link: '#', name: "условия"},{link: '#', name: "безопасность"},{link: '#', name: "подарочный сертификат"}]
+- var navLinks = [{link: '#offer', name: "цены"},{link: '#offer__slider', name: "фото"},{link: '#conditions', name: "условия"},{link: '#present', name: "подарочный сертификат"}]
 
 ul.menu
   for i in navLinks
     li
-      a(href=i.link).nav-link=i.name
+      a(href=i.link).nav-link.scroll=i.name
