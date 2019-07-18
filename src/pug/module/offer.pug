@@ -106,9 +106,9 @@ section.offer#offer
             h3.offer__item--title Pink
             span.select__title Кол-во часов
             select.select.select__time
-              option 2 часа
-              option 3 часа
-              option 4 часа
+              option(value="2 часа") 2 часа
+              option(value="3 часа") 3 часа
+              option(value="4 часа") 4 часа
             .offer__item--included
               h3 Что входит в пакет:
               ul
@@ -200,8 +200,8 @@ section.offer#offer
             h3.offer__item--title Red
             span.select__title Кол-во часов
             select.select.select__time(name='select-time')
-              option 3 часа
-              option 4 часа
+              option(value="3 часа") 3 часа
+              option(value="4 часа") 4 часа
             .offer__item--included
               h3 Что входит в пакет:
               ul
@@ -391,21 +391,129 @@ section.offer#offer
             p.subtitle более 2 человек
         ul.tab__content
           li.tab__content--inner.active#tab__content1
-            .tab__inner--item.active
+            form.tab__inner--item.active
+              input(type="hidden" name="project_name" value="spb-panorama")
+              input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+              input(type="hidden" name="form_subject" value="Заявка пакет White")
               span.bottom
-              p offer 1111
+              h3.offer__item--title White
+              span.select__title Кол-во часов
+              select.select.select__time(name='select-time')
+                option(value="2 часа") 2 часа
+                option(value="3 часа") 3 часа
+                option(value="4 часа") 4 часа
+              .offer__item--included
+                h3 Что входит в пакет:
+                ul
+                  li Вино или горячий чай
+                  li Уютные пледы
+                  li Удобная мебель
+                  li Декоративное освещение
+                  li Сезонные фрукты
               .tab__inner--list
                 .tab__inner--content
-                  p tab1111
-            .tab__inner--item
+                  p.checklist__title Предлагаем дополнить ваш праздник или свидание особенными деталями и приятными возможностями:
+                  .checklist
+                    ul.list
+                      li.list__item
+                        span.title Живая музыка
+                        span.price (+2500 р.)
+                        label.checkbox
+                          input(type="checkbox" name='Живая музыка')
+                          span.checkmark
+                      li.list__item
+                        span.title Профессиональная фотосессия
+                        span.price (+2500 р.)
+                        label.checkbox
+                          input(type="checkbox" name='Профессиональная фотосессия')
+                          span.checkmark
+                      li.list__item
+                        span.title Лепестки роз (на столе или путь от лифта к шатру)
+                        span.price (+1000 р.)
+                        label.checkbox
+                          input(type="checkbox" name='Лепестки роз (на столе или путь от лифта к шатру)')
+                          span.checkmark
+                      li.list__item
+                        span.title Дизайнерский букет
+                        span.price (+2500 р.)
+                        label.checkbox
+                          input(type="checkbox" name='Дизайнерский букет')
+                          span.checkmark
+                      li.list__item
+                        span.title Декор воздушными шарами
+                        span.price (+1500 р.)
+                        label.checkbox
+                          input(type="checkbox" name='Декор воздушными шарами')
+                          span.checkmark
+                      li.list__item
+                        span.title Прокат фотоаппарата InstaX (+ кассета на 10 снимков)
+                        span.price (+2000 р.)
+                        label.checkbox
+                          input(type="checkbox" name='Профессиональная фотосессия')
+                          span.checkmark
+                      li.list__item
+                        span.title Урок по сальсе с профессиональным преподавателем
+                        span.price (+2000/ч р.)
+                        label.checkbox
+                          input(type="checkbox" name='Урок по сальсе с профессиональным преподавателем')
+                          span.checkmark
+                      li.list__item
+                        span.title Дополнительный час
+                        span.price (+1000 р.)
+                        label.checkbox
+                          input(type="checkbox" name='Дополнительный час')
+                          span.checkmark
+                    
+            form.tab__inner--item
+              input(type="hidden" name="project_name" value="spb-panorama")
+              input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+              input(type="hidden" name="form_subject" value="Заявка пакет Pink")
               span.bottom
-              p offer 2222
+              h3.offer__item--title Pink
+              span.select__title(name='select-time') Кол-во часов
+              select.select.select__time
+                option(value="2 часа") 2 часа
+                option(value="3 часа") 3 часа
+                option(value="4 часа") 4 часа
+              .offer__item--included
+                h3 Что входит в пакет:
+                ul
+                  li Вино или горячий чай
+                  li Уютные пледы
+                  li Удобная мебель
+                  li Декоративное освещение
+                  li Сезонные фрукты
+                  li 
+                    b Цветы и конфеты
               .tab__inner--list
                 .tab__inner--content
                   p tab2222
-            .tab__inner--item
+            form.tab__inner--item
+              input(type="hidden" name="project_name" value="spb-panorama")
+              input(type="hidden" name="admin_email" value="panoramacenter@yandex.ru")
+              input(type="hidden" name="form_subject" value="Заявка пакет Red")
               span.bottom
-              p offer 3333
+              h3.offer__item--title Red
+              span.select__title Кол-во часов
+              select.select.select__time(name='select-time')
+                option(value="3 часа") 3 часа
+                option(value="4 часа") 4 часа
+              .offer__item--included
+                h3 Что входит в пакет:
+                ul
+                  li Вино или горячий чай
+                  li Уютные пледы
+                  li Удобная мебель
+                  li Декоративные освещение
+                  li Сезонные фрукты
+                  li 
+                    b Цветы и конфеты
+                  li 
+                    b Воздушные шары
+                  li 
+                    b Профессиональная фотосессия
+                  li 
+                    b Живая музыка
               .tab__inner--list
                 .tab__inner--content
                   p tab3333

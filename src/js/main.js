@@ -7,6 +7,11 @@ import * as burger from "./component/nav";
 import * as scroll from "./component/scroll";
 import * as accordion from "./component/accordion";
 
+var spanBottom = $('section.offer .container .content .tabs ul.tab__content li.tab__content--inner .tab__inner--item span.bottom');
+if(navigator.appVersion.indexOf("Mac") != -1){
+  spanBottom.css("width", spanBottom.width()+3+"px");
+  console.log(spanBottom.width());
+}
 
 $('.tab__inner--list').css('width', $('.tabs').width());
 

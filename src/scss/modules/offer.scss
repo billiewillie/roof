@@ -710,10 +710,102 @@ section.offer {
                   left: -61px;
                   top: calc(100%+30px);
                   padding: 0 60px 20px;
+                  z-index: 1;
 
                   & .tab__inner--content{
                     border: 1px solid rgba(16,16,16,.5);
-                    padding: 25px 45px; 
+                    padding: 25px 30px; 
+
+                    & p.checklist__title{
+                      font-weight: $medium;
+                      font-size: $fz8;
+                      margin-bottom: 20px;
+                    }
+
+                    & .checklist{
+
+                    }
+                  }
+                }
+
+                & h3.offer__item--title{
+                  font-size: $fz15;
+                  font-family: $font5;
+                  position: relative;
+                  text-align: center;
+                  z-index: 1;
+                  margin-bottom: 50px;
+
+                  &::before {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 250px;
+                    height: 96px;
+                    background-image: url("/assets/img/brush/white-brush.png");
+                    background-size: contain;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    z-index: -1;
+                  }
+                }
+
+                & span.select__title{
+                  width: 160px;
+                  background-color: $default-color;
+                  display: block;
+                  margin: auto;
+                  padding: 10px 10px 0;
+                  font-size: $fz1;
+                }
+
+                & select.select.select__time{
+                  width: 160px;
+                  background-color: $default-color;
+                  display: block;
+                  margin: auto;
+                  margin-bottom: 20px;
+                  padding: 0 10px 0;
+                  font-size: $fz10;
+                  font-weight: $bold;
+                  font-family: $mainFont;
+                  line-height: $lineHeight2;
+
+                  & option {
+                    font-weight: $bold;
+                  }
+                }
+
+                & .offer__item--included{
+                  text-align: center;
+
+                  & h3 {
+                    font-size: $fz3;
+                    margin-bottom: 15px;
+                  }
+
+                  & ul{
+                    text-align: left;
+
+                    & li {
+                      padding-left: 20px;
+                      font-size: $fz6;
+                      position: relative;
+                      margin-bottom: 15px;
+
+                      &::before{
+                        display: block;
+                        position: absolute;
+                        content: "—";
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                      }
+                    }
                   }
                 }
 
@@ -738,27 +830,40 @@ section.offer {
                     border-right: 1px solid rgba(16,16,16,.5);
                     border-bottom: 1px solid $color9;
                     background-color: transparent;
-                    z-index: 1;
+                    z-index: 2;
                   }
                 }
 
                 &:nth-child(2){
-                  &.active{
+                  & .tab__inner--list{
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: auto;
+                  }
 
-                    & .tab__inner--list{
-                      left: 50%;
-                      transform: translateX(-50%);
-                      margin: auto;
+                  & h3.offer__item--title{
+                    color: $default-color;
+  
+                    &::before {
+                      background-image: url("/assets/img/brush/offer-brush-pink.png");
                     }
                   }
                 }
 
                 &:nth-child(3){
-                  &.active{
+                  & .tab__inner--list{
+                    left: auto;
+                    right: -61px;
+                  }
 
-                    & .tab__inner--list{
-                      left: auto;
-                      right: -61px;
+                  & h3.offer__item--title{
+                    color: $default-color;
+  
+                    &::before {
+                      background-image: url("/assets/img/brush/offer-brush-red.png");
+                      transform: translate(-50%, -50%) rotate(5.8deg);
+                      width: 350px;
+                      height: 200px;
                     }
                   }
                 }
@@ -767,8 +872,6 @@ section.offer {
           }
         }
       }
-
-      
     }
   }
 }
