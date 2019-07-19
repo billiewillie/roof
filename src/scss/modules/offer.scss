@@ -748,6 +748,41 @@ section.offer {
                           height: 18px;
                           border-radius: 5px;
                           background-color: $default-color;
+
+                          & input{
+                            position: absolute;
+                            cursor: pointer;
+                            opacity: 0;
+                            height: 0;
+                            width: 0;
+
+                            &:checked ~ .checkmark:after {
+                              display: block;
+                            }
+                          }
+
+                          & span.checkmark{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+
+                            &::after{
+                              content: "";
+                              position: absolute;
+                              display: none;
+                              left: 6px;
+                              top: 0px;
+                              width: 8px;
+                              height: 15px;
+                              border: solid $color3;
+                              border-width: 0 2px 2px 0;
+                              -webkit-transform: rotate(45deg);
+                              -ms-transform: rotate(45deg);
+                              transform: rotate(45deg);
+                            }
+                          }
                         }
                       }
 
@@ -785,6 +820,7 @@ section.offer {
                           font-size: $fz2;
                           font-weight: $medium;
                           margin-bottom: 0;
+                          cursor: pointer;
                         }
                       }
                     }
@@ -878,6 +914,84 @@ section.offer {
                   }
                 }
 
+                & .offer__item--contact{
+                  position: fixed;
+                  display: none;
+                  width: 100%;
+                  height: 100%;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  justify-content: center;
+                  z-index: -1;
+                  opacity: 0;
+                  align-items: center;
+                  transition: .2s;
+                  background-color: rgba(255,255,255,.5);
+
+                  & .offer__item--inner{
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    align-items: stretch;
+                    background-color: $default-color;
+                    padding: 40px 40px 20px;
+                    -webkit-transition: .5s;
+                    -o-transition: .5s;
+                    transition: .5s;
+
+                    & a.close{
+                      width: 20px;
+                      height: 20px;
+                      position: absolute;
+                      top: 5px;
+                      right: 5px;
+                      background-image: url('/assets/img/icons/cancel.svg');
+                      background-position: 50%;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      cursor: pointer;
+                    }
+
+                    & .form__field{
+                      margin-bottom: 25px;
+                      & input.input{
+                        width: 100%;
+                        border-bottom: 2px solid $mainFontColor;
+                        font-family: $mainFont;
+                        font-size: $fz6;
+                        padding: 0 0 5px;
+                      }
+
+                      &:nth-last-child(2){
+                        margin-bottom: 40px;
+                      }
+
+                      &:last-child{
+                        margin-bottom: 0;
+                      }
+
+                      & button.button{
+                        font-size: $fz4;
+                        text-transform: uppercase;
+                        padding: 15px;
+                        width: 100%;
+                        border: 2px solid $mainFontColor;
+                        background-color: $default-color;
+                        letter-spacing: .1em;
+                        margin-bottom: 0;
+                        cursor: pointer;
+                      }
+                    }
+                  }
+
+                  &.open{
+                    opacity: 1;
+                    z-index: 2;
+                    display: flex;
+                  }
+                }
+
                 &.active{
                   border: 1px solid rgba(16,16,16,.5);
                   border-bottom: none;
@@ -900,6 +1014,10 @@ section.offer {
                     border-bottom: 1px solid $color9;
                     background-color: transparent;
                     z-index: 2;
+                  }
+
+                  & .offer__item--contact{
+                    display: flex;
                   }
                 }
 

@@ -61,7 +61,7 @@ $(".offer__slider .list").slick({
 });
 
 $(document).ready(function() {
-	$("form.form").submit(function() { //Change
+	$("form.form, form.form__tab").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
@@ -78,7 +78,26 @@ $(document).ready(function() {
 			}, 1000);
 		});
 		return false;
-	});
+  });
+  
+  // $("form.form__tab").submit(function() { //Change
+	// 	var th = $(this);
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "./assets/php/mail.php", //Change
+	// 		data: th.serialize()
+	// 	}).done(function() {
+	// 		alert("Спасибо! Мы с вами скоро свяжемся.");
+	// 		setTimeout(function() {
+	// 			// Done Functions
+  //       th.trigger("reset");
+  //       if($('.offer__item--contact.open').length){
+  //         $('.offer__item--contact').removeClass('open');
+  //       }
+	// 		}, 1000);
+	// 	});
+	// 	return false;
+	// });
 });
 
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

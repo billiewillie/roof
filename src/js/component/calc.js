@@ -85,7 +85,7 @@ function calc(){
         options[i].classList.toggle('checked');
         if(checkBox.checked == true && special === true && i === 3) {
           options[i].classList.add('checked');
-          offer.querySelector('input.offer__price--sum').value = ' p.';
+          offer.querySelector('input.offer__price--sum').value = sum + ' p.';
         } else if (checkBox.checked == true){
           checkBox.checked = false;
           sum -= services[i].price;
@@ -96,6 +96,10 @@ function calc(){
           offer.querySelector('input.offer__price--sum').value = sum + ' p.';
         }
       })
+
+      if(checkBox.checked == true && special === true) {
+        options[i].classList.add('checked');
+      }
     }
 
     for(let i = 0; i < hours.children.length; i++) {
@@ -127,16 +131,24 @@ function calc(){
     const options = Array.from(offer.querySelectorAll('li.list__item'));
     const hours = offer.querySelector('select.select.select__time');
     const people = document.querySelector('form.tab__inner--item.party select.select.select__people');
-    // const contactBtn = offer.querySelector('a.button.contact__btn');
-    // const closeBtn = offer.querySelector('.offer__item--contact a.close');
+    const contactBtn = offer.querySelector('a.button.contact__btn');
+    const offerItemContact = offer.querySelector('.offer__item--contact');
+    const closeBtn = offer.querySelector('.offer__item--contact a.close');
+
+    contactBtn.addEventListener('click', function(e) {
+      offerItemContact.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', function(e) {
+      offerItemContact.classList.remove('open');
+    });
 
     for(let i = 0; i < options.length; i++) {
       const checkBox = options[i].children[2].children[0];
       options[i].addEventListener('click', function(e) {
         options[i].classList.toggle('checked');
         if(checkBox.checked == true && special === true && i === 3) {
-          options[i].classList.add('checked');
-          offer.querySelector('.order input.price').value = ' p.';
+          offer.querySelector('.order input.price').value = sum + ' p.';
         } else if (checkBox.checked == true){
           checkBox.checked = false;
           sum -= services[i].price;
@@ -147,6 +159,10 @@ function calc(){
           offer.querySelector('.order input.price').value = sum + ' p.';
         }
       })
+
+      if(checkBox.checked == true && special === true) {
+        options[i].classList.add('checked');
+      }
     }
 
     for(let i = 0; i < hours.children.length; i++) {
@@ -178,8 +194,8 @@ function calc(){
   calcForm(formParty, false, 12000);
 
   calcDesktop(formDesktopReg, false, 5500);
-  calcDesktop(formDesktopPink, false, 6500);
-  calcDesktop(formDesktopRed, false, 13000);
+  calcDesktop(formDesktopPink, true, 6500);
+  calcDesktop(formDesktopRed, true, 13000);
   calcDesktop(formDesktopParty, false, 12000);
 
 }
