@@ -762,11 +762,19 @@ section.offer {
                           &.title{
                             font-size: $fz2;
                           }
+                        }
 
-                          &.price{
-                            font-weight: $bold;
-                            font-size: $fz13;
-                            margin-bottom: 20px;
+                        & input.price{
+                          font-weight: $bold;
+                          font-size: $fz13;
+                          margin-bottom: 20px;
+                          background-color: transparent;
+                          text-align: center;
+                          width: 200px;
+                          font-family: $mainFont;
+
+                          &:disabled{
+                            color: $mainFontColor;
                           }
                         }
                         
@@ -777,6 +785,7 @@ section.offer {
                           background-color: $default-color;
                           font-size: $fz2;
                           font-weight: $medium;
+                          margin-bottom: 0;
                         }
                       }
                     }
@@ -829,8 +838,13 @@ section.offer {
                   font-family: $mainFont;
                   line-height: $lineHeight2;
 
+                  &:disabled{
+                    color: $mainFontColor;
+                  }
+
                   & option {
                     font-weight: $bold;
+                    
                   }
                 }
 
@@ -920,6 +934,125 @@ section.offer {
                       width: 350px;
                       height: 200px;
                     }
+                  }
+                }
+              }
+
+              &:nth-child(2){
+                & .tab__inner--item{
+                  position: relative;
+                  width: 100%;
+
+                  &:before{
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    left: -60px;
+                    top: -35px;
+                    width: 371px; 
+                    height: 154px;
+                    background-image: url('/assets/img/colors.png');
+                    background-size: contain;
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
+                  }
+
+                  &:after{
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    right: -60px;
+                    top: 0px;
+                    width: 371px; 
+                    height: 154px;
+                    background-image: url('/assets/img/colors.png');
+                    background-size: contain;
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
+                    transform: rotateY(180deg);
+                  }
+
+                  & p.title{
+                    width: 387px;
+                    font-size: $fz7;
+                    line-height: $lineHeight2;
+                    margin: auto;
+                    text-align: center;
+                    margin-bottom: 40px;
+                  }
+
+                  & .options{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    width: 550px;
+                    margin: 0 auto 10px;
+
+                    & .selections{
+                      display: flex;
+                      align-items: flex-start;
+
+                      & .part{
+                        & select.select__time{
+                          margin-bottom: 0;
+                        }
+
+                        & select.select__people{
+                          width: 160px;
+                          background-color: #fff;
+                          display: block;
+                          margin: auto auto 0px;
+                          padding: 0 10px;
+                          font-size: 25px;
+                          font-weight: 700;
+                          font-family: EB Garamond,serif;
+                          line-height: 1.58;
+
+                          & option{
+                            font-weight: $bold;
+                          }
+                        }
+
+                        &:nth-child(1){
+                          margin-right: 30px;
+                        }
+                      }
+                    
+                    }
+
+                    & .order{
+                      text-align: center;
+
+                      & span.title{
+                        font-size: $fz2;
+                      }
+
+                      & input.price{
+                        font-weight: 700;
+                        font-size: 35px;
+                        margin-bottom: 0px;
+                        background-color: rgba(0,0,0,0);
+                        text-align: center;
+                        width: 200px;
+                        font-family: EB Garamond,serif;
+                        color: $mainFontColor;
+                      }
+                    }
+                  }
+
+                  & .content{
+                    width: 550px;
+                    font-style: italic;
+                    margin: 0 auto 20px;
+                  }
+
+                  & a.button{
+                    margin: auto;
+                    display: block;
+                    max-width: 220px;
+                    border: 2px solid $mainFontColor;
+                    color: $mainFontColor;
+                    background-color: $default-color;
                   }
                 }
               }

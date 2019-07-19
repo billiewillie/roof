@@ -13,7 +13,7 @@ $('a.tab__item').on('click',function(){
   return false;
 });
 
-$('.tab__inner--item').on('click',function(){
+$('li.tab__content--inner:first .tab__inner--item').on('click',function(){
   $('.tab__inner--item').removeClass('active');
   $(this).addClass('active');
   return false;
