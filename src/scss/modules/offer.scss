@@ -716,7 +716,6 @@ section.offer {
                   & .tab__inner--content{
                     border: 1px solid rgba(16,16,16,.5);
                     padding: 25px 30px; 
-                  
 
                     & p.checklist__title{
                       font-weight: $medium;
@@ -850,6 +849,7 @@ section.offer {
 
                 & .offer__item--included{
                   text-align: center;
+                  min-height: 363px;
 
                   & h3 {
                     font-size: $fz3;

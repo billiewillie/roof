@@ -1,10 +1,10 @@
-$('.nav__inner--tabs a:first').addClass('active');
+$('.nav-tabs a:first').addClass('active');
 $('.tab__content li.tab__content--inner').hide();
 $('.tab__content li.tab__content--inner:first').show();
 
 $('.tab__inner--item:first').addClass('active');
 
-$('a.tab__item').on('click',function(){
+$('a.tab__item').on('click', function(){
   $('.nav-tabs a.tab__item').removeClass('active');
   $(this).addClass('active')
   $('li.tab__content--inner').hide();

@@ -39,6 +39,11 @@ function calc(){
   const formPink = document.querySelector('form.offer__item.pink');
   const formRed = document.querySelector('form.offer__item.red');
   const formParty = document.querySelector('form.offer__item.party');
+
+  const formDesktopReg = document.querySelector('form.tab__inner--item.regular');
+  const formDesktopPink = document.querySelector('form.tab__inner--item.pink');
+  const formDesktopRed = document.querySelector('form.tab__inner--item.red');
+  const formDesktopParty = document.querySelector('form.tab__inner--item.party');
   
   function calcForm(offer, special, initSum){
     let sum = initSum;
@@ -113,11 +118,69 @@ function calc(){
       })
     }
   }
+
+  function calcDesktop(offer, special, initSum){
+    let sum = initSum;
+
+    offer.querySelector('.order input.price').value = sum + ' p.';
+
+    const options = Array.from(offer.querySelectorAll('li.list__item'));
+    const hours = offer.querySelector('select.select.select__time');
+    const people = document.querySelector('form.tab__inner--item.party select.select.select__people');
+    // const contactBtn = offer.querySelector('a.button.contact__btn');
+    // const closeBtn = offer.querySelector('.offer__item--contact a.close');
+
+    for(let i = 0; i < options.length; i++) {
+      const checkBox = options[i].children[2].children[0];
+      options[i].addEventListener('click', function(e) {
+        options[i].classList.toggle('checked');
+        if(checkBox.checked == true && special === true && i === 3) {
+          options[i].classList.add('checked');
+          offer.querySelector('.order input.price').value = ' p.';
+        } else if (checkBox.checked == true){
+          checkBox.checked = false;
+          sum -= services[i].price;
+          offer.querySelector('.order input.price').value = sum + ' p.';
+        } else {
+          checkBox.checked = true;
+          sum += services[i].price;
+          offer.querySelector('.order input.price').value = sum + ' p.';
+        }
+      })
+    }
+
+    for(let i = 0; i < hours.children.length; i++) {
+      hours.addEventListener('change', function(e) {
+        if(hours.children[0].selected === true) {
+          offer.querySelector('.order input.price').value = sum + ' p.';
+        } else if(hours.children[1].selected === true) {
+          offer.querySelector('.order input.price').value = 1000 + sum + ' p.';
+        } else if(hours.children[2].selected === true) {
+          offer.querySelector('.order input.price').value = 1500 + sum + ' p.';
+        } else offer.querySelector('.order input.price').value = sum + ' p.';
+      })
+    }
+
+    for(let i = 0; i < people.children.length; i++){
+      people.addEventListener('change', function(e) {
+        if(people.children[1].selected === true) {
+          offer.querySelector('.order input.price').value = 9000 + sum + ' p.';
+        } else if(people.children[2].selected === true) {
+          offer.querySelector('.order input.price').value = 17000 + sum + ' p.';
+        } else offer.querySelector('.order input.price').value = sum + ' p.';
+      })
+    }
+  }
   
   calcForm(formReg, false, 5500);
   calcForm(formPink, true, 6500);
   calcForm(formRed, true, 13000);
   calcForm(formParty, false, 12000);
+
+  calcDesktop(formDesktopReg, false, 5500);
+  calcDesktop(formDesktopPink, false, 6500);
+  calcDesktop(formDesktopRed, false, 13000);
+  calcDesktop(formDesktopParty, false, 12000);
 
 }
 
