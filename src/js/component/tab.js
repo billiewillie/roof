@@ -13,8 +13,9 @@ $('a.tab__item').on('click', function(){
   return false;
 });
 
-$('li.tab__content--inner:first .tab__inner--item').on('click',function(){
-  $('.tab__inner--item').removeClass('active');
-  $(this).addClass('active');
-  return false;
-});
+// if($('.offer__item--contact.open').length < 1){
+//   $('li.tab__content--inner:first .tab__inner--item').on('click',function() {
+//     $('.tab__inner--item').removeClass('active');
+//     $(this).addClass('active');
+//   });
+// }

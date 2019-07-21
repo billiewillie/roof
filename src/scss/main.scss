@@ -175,7 +175,7 @@ main.main {
       text-decoration: underline;
       font-style: italic;
       color: $mainFontColor;
-      font-size: $fz6;
+      font-size: $fz8;
 
       &:hover {
         text-decoration: none;
@@ -219,12 +219,6 @@ main.main {
 @import "modules/slick.scss";
 
 @import "modules/slick-theme.scss";
-
-@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (-webkit-min-device-pixel-ratio: 2) { 
-  .wrapper.no-scroll {
-    height: 105vh;
-  }
-}
 
 @media (min-width: 768px) {
   .visible__sm {

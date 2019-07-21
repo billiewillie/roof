@@ -63,6 +63,11 @@ section.offer {
           z-index: 1;
           min-width: 100%;
           padding: 30px 30px 20px;
+          
+          & p.offerta{
+            text-align: center;
+            margin-top: 15px;
+          }
 
           & .offer__item--about {
             padding: 40px 20px 20px;
@@ -660,6 +665,10 @@ section.offer {
           margin-bottom: 40px;
           min-height: 1200px;
 
+          &.min{
+            min-height: auto;
+          }
+
           & .nav-tabs{
             display: flex;
             justify-content: space-between;
@@ -712,6 +721,12 @@ section.offer {
                   top: calc(100%+30px);
                   padding: 0 60px 20px;
                   z-index: 1;
+
+                  & .offerta{
+                    text-align: center;
+                    margin-top: 15px;
+                    font-size: $fz2;
+                  }
 
                   & .tab__inner--content{
                     border: 1px solid rgba(16,16,16,.5);
@@ -856,7 +871,7 @@ section.offer {
                   width: 160px;
                   background-color: $default-color;
                   display: block;
-                  margin: auto;
+                  margin: 0 auto;
                   padding: 10px 10px 0;
                   font-size: $fz1;
                 }
@@ -865,8 +880,7 @@ section.offer {
                   width: 160px;
                   background-color: $default-color;
                   display: block;
-                  margin: auto;
-                  margin-bottom: 20px;
+                  margin: 0 auto 20px;
                   padding: 0 10px 0;
                   font-size: $fz10;
                   font-weight: $bold;
@@ -885,7 +899,6 @@ section.offer {
 
                 & .offer__item--included{
                   text-align: center;
-                  min-height: 363px;
 
                   & h3 {
                     font-size: $fz3;
@@ -894,6 +907,7 @@ section.offer {
 
                   & ul{
                     text-align: left;
+                    min-height: 330px;
 
                     & li {
                       padding-left: 20px;
@@ -1057,6 +1071,7 @@ section.offer {
               }
 
               &:nth-child(2){
+                flex-direction: column;
                 & .tab__inner--item{
                   position: relative;
                   width: 100%;
@@ -1171,7 +1186,14 @@ section.offer {
                     border: 2px solid $mainFontColor;
                     color: $mainFontColor;
                     background-color: $default-color;
+                    cursor: pointer;
                   }
+                }
+
+                & p.offerta{
+                  text-align: center;
+                  margin-top: 15px;
+                  font-size: $fz2;
                 }
               }
             }

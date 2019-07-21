@@ -7,6 +7,32 @@ import * as burger from "./component/nav";
 import * as scroll from "./component/scroll";
 import * as accordion from "./component/accordion";
 
+$(document).ready(function() {
+
+	$("form.form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "./assets/php/mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			alert("Спасибо! Мы с вами скоро свяжемся.");
+			setTimeout(function() {
+				// Done Functions
+        th.trigger("reset");
+        if($('.offer__item--contact.open').length){
+          $('.offer__item--contact').removeClass('open');
+        }
+			}, 1000);
+		});
+		return false;
+  });
+
+  if($('#tab__content2').hasClass('active')){
+    $('.tabs').addClass('min');
+  }
+});
+
 var spanBottom = $('section.offer .container .content .tabs ul.tab__content li.tab__content--inner .tab__inner--item span.bottom');
 if(navigator.appVersion.indexOf("Mac") != -1){
   spanBottom.css("width", spanBottom.width()+3+"px");
@@ -60,45 +86,7 @@ $(".offer__slider .list").slick({
   ]
 });
 
-$(document).ready(function() {
-	$("form.form, form.form__tab").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "./assets/php/mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Спасибо! Мы с вами скоро свяжемся.");
-			setTimeout(function() {
-				// Done Functions
-        th.trigger("reset");
-        if($('.offer__item--contact.open').length){
-          $('.offer__item--contact').removeClass('open');
-        }
-			}, 1000);
-		});
-		return false;
-  });
-  
-  // $("form.form__tab").submit(function() { //Change
-	// 	var th = $(this);
-	// 	$.ajax({
-	// 		type: "POST",
-	// 		url: "./assets/php/mail.php", //Change
-	// 		data: th.serialize()
-	// 	}).done(function() {
-	// 		alert("Спасибо! Мы с вами скоро свяжемся.");
-	// 		setTimeout(function() {
-	// 			// Done Functions
-  //       th.trigger("reset");
-  //       if($('.offer__item--contact.open').length){
-  //         $('.offer__item--contact').removeClass('open');
-  //       }
-	// 		}, 1000);
-	// 	});
-	// 	return false;
-	// });
-});
+
 
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})

@@ -40,10 +40,10 @@ function calc(){
   const formRed = document.querySelector('form.offer__item.red');
   const formParty = document.querySelector('form.offer__item.party');
 
-  const formDesktopReg = document.querySelector('form.tab__inner--item.regular');
-  const formDesktopPink = document.querySelector('form.tab__inner--item.pink');
-  const formDesktopRed = document.querySelector('form.tab__inner--item.red');
-  const formDesktopParty = document.querySelector('form.tab__inner--item.party');
+  const formDesktopReg = document.querySelector('.tab__inner--item.regular');
+  const formDesktopPink = document.querySelector('.tab__inner--item.pink');
+  const formDesktopRed = document.querySelector('.tab__inner--item.red');
+  const formDesktopParty = document.querySelector('.tab__inner--item.party');
   
   function calcForm(offer, special, initSum){
     let sum = initSum;
@@ -125,12 +125,14 @@ function calc(){
 
   function calcDesktop(offer, special, initSum){
     let sum = initSum;
-
-    offer.querySelector('.order input.price').value = sum + ' p.';
+    let time = 0;
+    let checks = 0;
+    let crowd = 0;
+    offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
 
     const options = Array.from(offer.querySelectorAll('li.list__item'));
     const hours = offer.querySelector('select.select.select__time');
-    const people = document.querySelector('form.tab__inner--item.party select.select.select__people');
+    const people = document.querySelector('.tab__inner--item.party select.select.select__people');
     const contactBtn = offer.querySelector('a.button.contact__btn');
     const offerItemContact = offer.querySelector('.offer__item--contact');
     const closeBtn = offer.querySelector('.offer__item--contact a.close');
@@ -148,15 +150,15 @@ function calc(){
       options[i].addEventListener('click', function(e) {
         options[i].classList.toggle('checked');
         if(checkBox.checked == true && special === true && i === 3) {
-          offer.querySelector('.order input.price').value = sum + ' p.';
+          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
         } else if (checkBox.checked == true){
           checkBox.checked = false;
           sum -= services[i].price;
-          offer.querySelector('.order input.price').value = sum + ' p.';
+          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
         } else {
           checkBox.checked = true;
           sum += services[i].price;
-          offer.querySelector('.order input.price').value = sum + ' p.';
+          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
         }
       })
 
@@ -168,22 +170,31 @@ function calc(){
     for(let i = 0; i < hours.children.length; i++) {
       hours.addEventListener('change', function(e) {
         if(hours.children[0].selected === true) {
-          offer.querySelector('.order input.price').value = sum + ' p.';
+          time = 0;
         } else if(hours.children[1].selected === true) {
-          offer.querySelector('.order input.price').value = 1000 + sum + ' p.';
+          time = 1000;
         } else if(hours.children[2].selected === true) {
-          offer.querySelector('.order input.price').value = 1500 + sum + ' p.';
-        } else offer.querySelector('.order input.price').value = sum + ' p.';
+          time = 1500;
+        } else {
+          time = 0;
+        } 
+        offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
+        return time;
       })
     }
 
     for(let i = 0; i < people.children.length; i++){
       people.addEventListener('change', function(e) {
         if(people.children[1].selected === true) {
-          offer.querySelector('.order input.price').value = 9000 + sum + ' p.';
+          crowd = 9000;
         } else if(people.children[2].selected === true) {
-          offer.querySelector('.order input.price').value = 17000 + sum + ' p.';
-        } else offer.querySelector('.order input.price').value = sum + ' p.';
+          crowd = 17000;
+          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
+        } else {
+          crowd = 0;
+        } 
+        offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
+        return crowd;
       })
     }
   }
