@@ -47,8 +47,11 @@ function calc(){
   
   function calcForm(offer, special, initSum){
     let sum = initSum;
+    let time = 0;
+    let checks = 0;
+    let crowd = 0;
 
-    offer.querySelector('input.offer__price--sum').value = sum + ' p.';
+    offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
 
     const options = Array.from(offer.querySelectorAll('li.list__item'));
     const hours = offer.querySelector('select.select.select__time');
@@ -83,42 +86,50 @@ function calc(){
       const checkBox = options[i].children[2].children[0];
       options[i].addEventListener('click', function(e) {
         options[i].classList.toggle('checked');
-        if(checkBox.checked == true && special === true && i === 3) {
+        if(checkBox.checked == true && checkBox.disabled === true && special === true && (i === 3 || i === 4 || i === 5 || i === 6 || i === 7)) {
           options[i].classList.add('checked');
-          offer.querySelector('input.offer__price--sum').value = sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
         } else if (checkBox.checked == true){
           checkBox.checked = false;
           sum -= services[i].price;
-          offer.querySelector('input.offer__price--sum').value = sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
         } else {
           checkBox.checked = true;
           sum += services[i].price;
-          offer.querySelector('input.offer__price--sum').value = sum + ' p.';
+          offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
         }
       })
-
-      if(checkBox.checked == true && special === true) {
-        options[i].classList.add('checked');
-      }
     }
 
     for(let i = 0; i < hours.children.length; i++) {
       hours.addEventListener('change', function(e) {
-        if(hours.children[1].selected === true) {
-          offer.querySelector('input.offer__price--sum').value = 1000 + sum + ' p.';
+
+        if(hours.children[0].selected === true) {
+          time = 0;
+        } else if(hours.children[1].selected === true) {
+          time = 1000;
         } else if(hours.children[2].selected === true) {
-          offer.querySelector('input.offer__price--sum').value = 1500 + sum + ' p.';
-        } else offer.querySelector('input.offer__price--sum').value = sum + ' p.';
+          time = 1500;
+        } else {
+          time = 0;
+        } 
+        offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
+        return time;
       })
     }
       
     for(let i = 0; i < people.children.length; i++){
       people.addEventListener('change', function(e) {
         if(people.children[1].selected === true) {
-          offer.querySelector('input.offer__price--sum').value = 9000 + sum + ' p.';
+          crowd = 9000;
         } else if(people.children[2].selected === true) {
-          offer.querySelector('input.offer__price--sum').value = 17000 + sum + ' p.';
-        } else offer.querySelector('input.offer__price--sum').value = sum + ' p.';
+          crowd = 17000;
+          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
+        } else {
+          crowd = 0;
+        } 
+        offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
+        return crowd;
       })
     }
   }
@@ -149,7 +160,8 @@ function calc(){
       const checkBox = options[i].children[2].children[0];
       options[i].addEventListener('click', function(e) {
         options[i].classList.toggle('checked');
-        if(checkBox.checked == true && special === true && i === 3) {
+        if(checkBox.checked == true && checkBox.disabled === true && special === true && (i === 3 || i === 4 || i === 5 || i === 6 || i === 7)) {
+          options[i].classList.add('checked');
           offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
         } else if (checkBox.checked == true){
           checkBox.checked = false;
@@ -161,10 +173,6 @@ function calc(){
           offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
         }
       })
-
-      if(checkBox.checked == true && special === true) {
-        options[i].classList.add('checked');
-      }
     }
 
     for(let i = 0; i < hours.children.length; i++) {

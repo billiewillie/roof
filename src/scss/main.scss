@@ -139,6 +139,7 @@ main.main {
     & .button {
       background-color: transparent;
       color: $default-color;
+      cursor: pointer;
     }
 
     .main__description {

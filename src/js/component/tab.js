@@ -9,13 +9,20 @@ $('a.tab__item').on('click', function(){
   $(this).addClass('active')
   $('li.tab__content--inner').hide();
   var activeTab = $(this).attr('href');
-  $(activeTab).show();
+  $(activeTab).show(); 
+  if($('.nav-tabs a.tab__item:eq(1)').hasClass('active')){
+    $('.tabs').addClass('min');
+  } else {
+    $('.tabs').removeClass('min');
+  }
   return false;
 });
 
-// if($('.offer__item--contact.open').length < 1){
-//   $('li.tab__content--inner:first .tab__inner--item').on('click',function() {
-//     $('.tab__inner--item').removeClass('active');
-//     $(this).addClass('active');
-//   });
-// }
+
+
+if($('.offer__item--contact.open').length < 1) {
+  $('li.tab__content--inner:first .tab__inner--item').on('click',function() {
+    $('.tab__inner--item').removeClass('active');
+    $(this).addClass('active');
+  });
+}

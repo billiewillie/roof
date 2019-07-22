@@ -59,7 +59,7 @@ $(".offer__list").slick({
 });
 
 $(".slider").slick({
-  dots: true,
+  dots: false,
   arrows: true,
   infinite: true,
   autoplay: false,
