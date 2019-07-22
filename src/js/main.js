@@ -197,3 +197,7 @@ $(".offer__slider .list").slick({
     }
   ]
 });
+
+window.on('scroll', function(){
+  $('.fadein__scroll').addClass('show');
+});
