@@ -672,8 +672,8 @@ section.offer {
             position: absolute;
             content: '';
             top: -90px;
-            left: -403px;
-            width: 600px;
+            left: -292px;
+            width: 514px;
             height: 730px;
             background-image: url('/assets/img/offer-plant.png');
             background-size: contain;
@@ -729,6 +729,7 @@ section.offer {
                 width: 32%;
                 border: 2px solid $default-color;
                 padding: 40px 30px 30px;
+                position: relative;
                 
                 & .tab__inner--list{
                   display: none;
@@ -924,6 +925,9 @@ section.offer {
                   & ul{
                     text-align: left;
                     min-height: 330px;
+                    position: relative;
+
+
 
                     & li {
                       padding-left: 20px;
@@ -1022,6 +1026,34 @@ section.offer {
                   }
                 }
 
+                & .offer__item--cover{
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  left: 0;
+                  bottom: 0;
+                  background: rgba(224,224,224,1);
+                  background: -moz-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: -webkit-gradient(bottom, top, color-stop(0%, rgba(224,224,224,1)), color-stop(40%, rgba(224,224,232,1)), color-stop(100%, rgba(224,224,232,0)));
+                  background: -webkit-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: -o-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: -ms-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#e0e0e8', GradientType=1 );
+
+                  & .button{
+                    bottom: 35px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    position: absolute;
+                    width: 80%;
+                    text-align: center;
+                    color: $mainFontColor;
+                    cursor: pointer;
+                  }
+                }
+
                 &.active{
                   border: 1px solid rgba(16,16,16,.5);
                   border-bottom: none;
@@ -1048,6 +1080,10 @@ section.offer {
 
                   & .offer__item--contact{
                     display: flex;
+                  }
+
+                  & .offer__item--cover{
+                    display: none;
                   }
                 }
 

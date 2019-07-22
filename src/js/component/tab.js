@@ -18,11 +18,9 @@ $('a.tab__item').on('click', function(){
   return false;
 });
 
-
-
 if($('.offer__item--contact.open').length < 1) {
-  $('li.tab__content--inner:first .tab__inner--item').on('click',function() {
+  $('li.tab__content--inner:first .tab__inner--item .offer__item--cover .button').on('click', function() {
     $('.tab__inner--item').removeClass('active');
-    $(this).addClass('active');
+    $(this).parents(".tab__inner--item").addClass('active');
   });
 }
