@@ -29,6 +29,12 @@ section.safety {
           background-position: 50%;
           background-repeat: no-repeat;
         }
+
+        &.open{
+          &::before {
+            transform: rotate(90deg);
+          }
+        }
       }
     }
 
@@ -36,10 +42,21 @@ section.safety {
       padding: 0 20px 0 30px;
       font-size: $fz4;
       margin-bottom: 35px;
+      display: none;
+
+      &.open{
+        display: flex;
+      }
     }
 
     & .comfort {
       padding: 0 0 0 30px;
+      display: none;
+      flex-direction: column;
+
+      &.open{
+        display: flex;
+      }
 
       & .comfort__part {
         &:last-child {
@@ -152,7 +169,6 @@ section.safety {
 
           &::before {
             right: -60px;
-            transform: rotate(90deg);
           }
         }
       }
@@ -162,7 +178,8 @@ section.safety {
         font-size: $fz7;
       }
       & .comfort {
-        display: flex;
+        display: none;
+        flex-direction: row;
 
         & .comfort__part {
           width: 50%;

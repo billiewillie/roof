@@ -6,7 +6,8 @@ import calc from "./component/calc";
 import * as tab from "./component/tab";
 import * as burger from "./component/nav";
 import * as scroll from "./component/scroll";
-import * as accordion from "./component/accordion";
+import accordion from "./component/accordion";
+import safety from "./component/safety";
 
 (function($){
 	var getRand = function (a, b) {

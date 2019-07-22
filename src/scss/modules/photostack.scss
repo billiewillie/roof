@@ -46,8 +46,6 @@
     & > li {
       width: 360px;
       height: 418px;
-
-      
     }
   }
 }
@@ -56,6 +54,7 @@
   .photostack {
     height: 500px;
     margin-top: -60px;
+    margin-bottom: 30px;
 
     &::before {
       right: -170px;
