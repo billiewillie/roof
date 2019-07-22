@@ -4,6 +4,7 @@ const wrapper = $('.wrapper');
 
 export default $('.scroll').on('click', function(e){
   e.preventDefault();
+  $('.fadein__scroll').addClass('show');
   burgerMenu.removeClass('active');
   mobileHidden.removeClass('show');
   wrapper.removeClass('no-scroll');

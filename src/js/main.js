@@ -1,7 +1,7 @@
 // import * as photostack from 'photostack'
 import "slick-carousel";
 import "lightbox2";
-// import * as stack from "./component/photostack";
+import * as stack from "./component/photostack";
 import calc from "./component/calc";
 import * as tab from "./component/tab";
 import * as burger from "./component/nav";
@@ -132,7 +132,7 @@ $(document).ready(function() {
 
   if($('#tab__content2').hasClass('active')){
     $('.tabs').addClass('min');
-  }
+  };
 
   $(".photostack").Photostack({
     // top position to move
@@ -143,12 +143,12 @@ $(document).ready(function() {
     degFrom:-20,
     degTo:20
   });
+  
 });
 
 var spanBottom = $('section.offer .container .content .tabs ul.tab__content li.tab__content--inner .tab__inner--item span.bottom');
 if(navigator.appVersion.indexOf("Mac") != -1){
   spanBottom.css("width", spanBottom.width()+3+"px");
-  console.log(spanBottom.width());
 }
 
 $('.tab__inner--list').css('width', $('.tabs').width());
@@ -198,6 +198,6 @@ $(".offer__slider .list").slick({
   ]
 });
 
-window.on('scroll', function(){
+$(window).on('scroll', function(){
   $('.fadein__scroll').addClass('show');
 });
