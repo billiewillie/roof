@@ -166,7 +166,6 @@ main.main {
 }
 
 .main__gallery {
-  width: 100%;
   text-align: center;
   margin-bottom: 50px;
 
@@ -375,6 +374,7 @@ main.main {
 
       & .main__gallery {
         margin-bottom: 0;
+        width: 30%;
 
         & p.main__gallery--text {
           padding: 35px;

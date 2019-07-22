@@ -1,11 +1,4 @@
-/**
-* jquery.Photostack.js v0.1.2 - Simple Photostack plugin for jQuery
-* https://github.com/steelydylan/jquery.Photostack.js
-* MIT Licensed
-* Copyright (C) 2015 steelydylan http://horicdesign.com
-*/
-
-(function($){
+export default function($){
 	var getRand = function (a, b) {
         return ~~(Math.random() * (b - a + 1)) + a;
     }
@@ -104,4 +97,4 @@
 			setInterval(function(){$this.click()},opt.timespan+opt.animationSpeed*2);
 		}
 	};
-})(jQuery);
+};

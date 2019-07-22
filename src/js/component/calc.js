@@ -49,13 +49,11 @@ function calc(){
     let sum = initSum;
     let time = 0;
     let checks = 0;
-    let crowd = 0;
 
-    offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
+    offer.querySelector('input.offer__price--sum').value = checks + time + sum + ' p.';
 
     const options = Array.from(offer.querySelectorAll('li.list__item'));
     const hours = offer.querySelector('select.select.select__time');
-    const people = document.querySelector('form.offer__item.party select.select.select__people');
     const addBtn = offer.querySelector('a.additional__button');
     const optionsClose = offer.querySelector('.options__close');
     const offerBtn = offer.querySelector('.options a.button');
@@ -82,24 +80,24 @@ function calc(){
       e.target.parentNode.classList.remove('open');
     });
 
-    for(let i = 0; i < options.length; i++) {
-      const checkBox = options[i].children[2].children[0];
-      options[i].addEventListener('click', function(e) {
-        options[i].classList.toggle('checked');
-        if(checkBox.checked == true && checkBox.disabled === true && special === true && (i === 3 || i === 4 || i === 5 || i === 6 || i === 7)) {
-          options[i].classList.add('checked');
-          offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
-        } else if (checkBox.checked == true){
-          checkBox.checked = false;
-          sum -= services[i].price;
-          offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
-        } else {
-          checkBox.checked = true;
-          sum += services[i].price;
-          offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
-        }
-      })
-    }
+    // for(let i = 0; i < options.length; i++) {
+    //   const checkBox = options[i].children[2].children[0];
+    //   options[i].addEventListener('click', function(e) {
+    //     options[i].classList.toggle('checked');
+    //     if(checkBox.checked == true && checkBox.disabled === true && special === true && (i === 3 || i === 4 || i === 5 || i === 6 || i === 7)) {
+    //       options[i].classList.add('checked');
+    //       offer.querySelector('input.offer__price--sum').value = checks + time + sum + ' p.';
+    //     } else if (checkBox.checked == true){
+    //       checkBox.checked = false;
+    //       sum -= services[i].price;
+    //       offer.querySelector('input.offer__price--sum').value = checks + time + sum + ' p.';
+    //     } else {
+    //       checkBox.checked = true;
+    //       sum += services[i].price;
+    //       offer.querySelector('input.offer__price--sum').value = checks + time + sum + ' p.';
+    //     }
+    //   })
+    // }
 
     for(let i = 0; i < hours.children.length; i++) {
       hours.addEventListener('change', function(e) {
@@ -113,10 +111,44 @@ function calc(){
         } else {
           time = 0;
         } 
-        offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
+        offer.querySelector('input.offer__price--sum').value = checks + time + sum + ' p.';
         return time;
       })
     }
+  }
+
+  function calcFormParty(offer, initSum){
+    let sum = initSum;
+    let time = 0;
+    let crowd = 0;
+
+    offer.querySelector('input.offer__price--sum').value = time + sum + crowd + ' p.';
+    const people = document.querySelector('form.offer__item.party select.select.select__people');
+    const addBtn = offer.querySelector('a.additional__button');
+    const optionsClose = offer.querySelector('.options__close');
+    const offerBtn = offer.querySelector('.options a.button');
+    const contactBtn = offer.querySelector('a.button.contact__btn');
+    const closeBtn = offer.querySelector('.offer__item--contact a.close');
+
+    addBtn.addEventListener('click', function(e) {
+      e.target.parentNode.children[7].classList.add('open');
+    });
+
+    optionsClose.addEventListener('click', function(e) {
+      e.target.parentNode.parentNode.parentNode.classList.remove('open');
+    });
+
+    offerBtn.addEventListener('click', function(e) {
+      e.target.parentNode.parentNode.classList.remove('open');
+    });
+
+    contactBtn.addEventListener('click', function(e) {
+      e.target.parentNode.children[8].classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', function(e) {
+      e.target.parentNode.classList.remove('open');
+    });
       
     for(let i = 0; i < people.children.length; i++){
       people.addEventListener('change', function(e) {
@@ -124,11 +156,10 @@ function calc(){
           crowd = 9000;
         } else if(people.children[2].selected === true) {
           crowd = 17000;
-          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
         } else {
           crowd = 0;
         } 
-        offer.querySelector('input.offer__price--sum').value = checks + time + sum + crowd + ' p.';
+        offer.querySelector('input.offer__price--sum').value = time + sum + crowd + ' p.';
         return crowd;
       })
     }
@@ -138,11 +169,64 @@ function calc(){
     let sum = initSum;
     let time = 0;
     let checks = 0;
-    let crowd = 0;
-    offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
+    offer.querySelector('.order input.price').value = checks + time + sum + ' p.';
 
     const options = Array.from(offer.querySelectorAll('li.list__item'));
     const hours = offer.querySelector('select.select.select__time');
+    const contactBtn = offer.querySelector('a.button.contact__btn');
+    const offerItemContact = offer.querySelector('.offer__item--contact');
+    const closeBtn = offer.querySelector('.offer__item--contact a.close');
+
+    contactBtn.addEventListener('click', function(e) {
+      offerItemContact.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', function(e) {
+      offerItemContact.classList.remove('open');
+    });
+
+    // for(let i = 0; i < options.length; i++) {
+    //   const checkBox = options[i].children[2].children[0];
+    //   options[i].addEventListener('click', function(e) {
+    //     options[i].classList.toggle('checked');
+    //     if(checkBox.checked == true && checkBox.disabled === true && special === true && (i === 3 || i === 4 || i === 5 || i === 6 || i === 7)) {
+    //       options[i].classList.add('checked');
+    //       offer.querySelector('.order input.price').value = checks + time + sum + ' p.';
+    //     } else if (checkBox.checked == true){
+    //       checkBox.checked = false;
+    //       sum -= services[i].price;
+    //       offer.querySelector('.order input.price').value = checks + time + sum + ' p.';
+    //     } else {
+    //       checkBox.checked = true;
+    //       sum += services[i].price;
+    //       offer.querySelector('.order input.price').value = checks + time + sum + ' p.';
+    //     }
+    //     return sum;
+    //   })
+    // }
+
+    for(let i = 0; i < hours.children.length; i++) {
+      hours.addEventListener('change', function(e) {
+        if(hours.children[0].selected === true) {
+          time = 0;
+        } else if(hours.children[1].selected === true) {
+          time = 1000;
+        } else if(hours.children[2].selected === true) {
+          time = 1500;
+        } else {
+          time = 0;
+        } 
+        offer.querySelector('.order input.price').value = checks + time + sum + ' p.';
+        return time;
+      })
+    }
+  }
+
+  function calcDesktopParty(offer, initSum) {
+    let sum = initSum;
+    let time = 0;
+    let crowd = 0;
+    offer.querySelector('.order input.price').value = time + sum + crowd + ' p.';
     const people = document.querySelector('.tab__inner--item.party select.select.select__people');
     const contactBtn = offer.querySelector('a.button.contact__btn');
     const offerItemContact = offer.querySelector('.offer__item--contact');
@@ -156,52 +240,16 @@ function calc(){
       offerItemContact.classList.remove('open');
     });
 
-    for(let i = 0; i < options.length; i++) {
-      const checkBox = options[i].children[2].children[0];
-      options[i].addEventListener('click', function(e) {
-        options[i].classList.toggle('checked');
-        if(checkBox.checked == true && checkBox.disabled === true && special === true && (i === 3 || i === 4 || i === 5 || i === 6 || i === 7)) {
-          options[i].classList.add('checked');
-          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
-        } else if (checkBox.checked == true){
-          checkBox.checked = false;
-          sum -= services[i].price;
-          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
-        } else {
-          checkBox.checked = true;
-          sum += services[i].price;
-          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
-        }
-      })
-    }
-
-    for(let i = 0; i < hours.children.length; i++) {
-      hours.addEventListener('change', function(e) {
-        if(hours.children[0].selected === true) {
-          time = 0;
-        } else if(hours.children[1].selected === true) {
-          time = 1000;
-        } else if(hours.children[2].selected === true) {
-          time = 1500;
-        } else {
-          time = 0;
-        } 
-        offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
-        return time;
-      })
-    }
-
     for(let i = 0; i < people.children.length; i++){
       people.addEventListener('change', function(e) {
         if(people.children[1].selected === true) {
           crowd = 9000;
         } else if(people.children[2].selected === true) {
           crowd = 17000;
-          offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
         } else {
           crowd = 0;
         } 
-        offer.querySelector('.order input.price').value = checks + time + sum + crowd + ' p.';
+        offer.querySelector('.order input.price').value = time + sum + crowd + ' p.';
         return crowd;
       })
     }
@@ -210,12 +258,12 @@ function calc(){
   calcForm(formReg, false, 5500);
   calcForm(formPink, true, 6500);
   calcForm(formRed, true, 13000);
-  calcForm(formParty, false, 12000);
+  calcFormParty(formParty, 12000);
 
   calcDesktop(formDesktopReg, false, 5500);
   calcDesktop(formDesktopPink, true, 6500);
   calcDesktop(formDesktopRed, true, 13000);
-  calcDesktop(formDesktopParty, false, 12000);
+  calcDesktopParty(formDesktopParty, 12000);
 
 }
 
