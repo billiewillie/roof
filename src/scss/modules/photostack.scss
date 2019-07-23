@@ -2,7 +2,7 @@
   position: relative;
   padding: 0;
   margin: 0;
-  height: 70vh;
+  height: 50vh !important;
   width: 300px;
   display: flex;
   justify-content: center;
@@ -35,7 +35,6 @@
 
 @media (min-width: 768px) {
   .photostack {
-    height: 50vh;
 
     &::before {
       right: -250px;
@@ -52,7 +51,7 @@
 
 @media (min-width: 992px) {
   .photostack {
-    height: 500px;
+    height: 500px !important;
     margin-top: -60px;
     margin-bottom: 30px;
 

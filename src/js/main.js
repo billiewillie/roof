@@ -1,6 +1,7 @@
 // import * as photostack from 'photostack'
 import "slick-carousel";
 import "lightbox2";
+import "jquery-lazyload";
 import * as stack from "./component/photostack";
 import calc from "./component/calc";
 import * as tab from "./component/tab";
@@ -199,6 +200,4 @@ $(".offer__slider .list").slick({
   ]
 });
 
-$(window).on('scroll', function(){
-  $('.fadein__scroll').addClass('show');
-});
+$("img.lazy").lazyload();
