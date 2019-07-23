@@ -144,6 +144,7 @@ $(document).ready(function() {
     degFrom: -20,
     degTo: 20,
     auto: true,
+    animationSpeed: 1000
   });
 
   $('.tab__inner--list').css('width', $('.tabs').width());
