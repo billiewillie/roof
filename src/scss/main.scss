@@ -83,6 +83,11 @@ section.content {
   font-size: $fz2;
   text-transform: uppercase;
   margin-bottom: 10px;
+  transition: .2s;
+
+  &:hover{
+    background-color: $red;
+  }
 }
 
 .visible__sm {
@@ -128,7 +133,7 @@ main.main {
         top: 60px;
         width: 147px;
         height: 53px;
-        background-image: url("/assets/img/brush/title-brush.png");
+        background-image: url("/assets/img/brush/header-brush-orange.png");
         background-size: contain;
         background-position: 50%;
         transform: rotate(-43.24deg);

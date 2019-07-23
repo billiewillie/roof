@@ -57,6 +57,11 @@ section.present {
       color: $mainFontColor;
       position: relative;
       z-index: 1;
+      transition: .2s;
+
+      &:hover{
+        background-color: $red;
+      }
     }
   }
 }

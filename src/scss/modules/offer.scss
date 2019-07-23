@@ -672,7 +672,7 @@ section.offer {
             position: absolute;
             content: '';
             top: -90px;
-            left: -292px;
+            left: -366px;
             width: 514px;
             height: 730px;
             background-image: url('/assets/img/offer-plant.png');
@@ -853,6 +853,11 @@ section.offer {
                           font-weight: $medium;
                           margin-bottom: 0;
                           cursor: pointer;
+                          transition: .2s;
+
+                          &:hover{
+                            background-color: $red;
+                          }
                         }
                       }
                     }
@@ -874,8 +879,8 @@ section.offer {
                     left: 50%;
                     top: 50%;
                     transform: translate(-50%, -50%);
-                    width: 250px;
-                    height: 96px;
+                    width: 279px;
+                    height: 107px;
                     background-image: url("/assets/img/brush/white-brush.png");
                     background-size: contain;
                     background-position: 50%;
@@ -968,10 +973,13 @@ section.offer {
                     flex-direction: column;
                     align-items: stretch;
                     background-color: $default-color;
-                    padding: 40px 40px 20px;
+                    padding: 80px 80px 40px;
                     -webkit-transition: .5s;
                     -o-transition: .5s;
                     transition: .5s;
+                    width: 800px;
+                    align-items: center;
+                    text-align: center;
 
                     & a.close{
                       width: 20px;
@@ -988,7 +996,7 @@ section.offer {
 
                     & .form__field{
                       margin-bottom: 25px;
-                      width: 300px;
+                      width: 400px;
                       & input.input{
                         width: 100%;
                         border-bottom: 2px solid $mainFontColor;
@@ -1033,12 +1041,12 @@ section.offer {
                   left: 0;
                   bottom: 0;
                   background: rgba(224,224,224,1);
-                  background: -moz-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
-                  background: -webkit-gradient(bottom, top, color-stop(0%, rgba(224,224,224,1)), color-stop(40%, rgba(224,224,232,1)), color-stop(100%, rgba(224,224,232,0)));
-                  background: -webkit-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
-                  background: -o-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
-                  background: -ms-linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
-                  background: linear-gradient(0deg, rgba(224,224,224,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: -moz-linear-gradient(0deg, rgba(224,224,232,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: -webkit-gradient(bottom, top, color-stop(0%, rgba(224,224,232,1)), color-stop(40%, rgba(224,224,232,1)), color-stop(100%, rgba(224,224,232,0)));
+                  background: -webkit-linear-gradient(0deg, rgba(224,224,232,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: -o-linear-gradient(0deg, rgba(224,224,232,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: -ms-linear-gradient(0deg, rgba(224,224,232,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
+                  background: linear-gradient(0deg, rgba(224,224,232,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
                   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#e0e0e8', GradientType=1 );
 
                   & .button{
@@ -1115,8 +1123,8 @@ section.offer {
                     &::before {
                       background-image: url("/assets/img/brush/offer-brush-red.png");
                       transform: translate(-50%, -50%) rotate(5.8deg);
-                      width: 350px;
-                      height: 200px;
+                      width: 430px;
+                      height: 240px;
                     }
                   }
                 }
@@ -1239,6 +1247,10 @@ section.offer {
                     color: $mainFontColor;
                     background-color: $default-color;
                     cursor: pointer;
+
+                    &:hover{
+                      background-color: $red;
+                    }
                   }
                 }
 
@@ -1285,7 +1297,7 @@ section.offer {
         & .pic__left{
           position: absolute;
           display: block;
-          right: 60%;
+          right: 406px;
           bottom: 85%;
           width: 514px;
           z-index: -1;

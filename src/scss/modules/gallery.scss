@@ -5,6 +5,17 @@ section.gallery {
   background-position: 50% 100%;
   background-size: auto 90%;
 
+  .slick-prev,
+  .slick-next{
+    width: 10px;
+    height: 15px;
+
+    &::before{
+      width: 10px;
+      height: 15px;
+    }
+  }
+
   & .container {
     & h2.title {
       font-family: $font5;

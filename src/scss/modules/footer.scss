@@ -22,9 +22,9 @@ footer.footer {
 
   a.button {
     border: 2px solid $default-color;
-    background-color: transparent;
     color: $default-color;
     display: inline-block;
+    transition: .2s;
   }
 
   .email {

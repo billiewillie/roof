@@ -39,6 +39,11 @@ form.form {
     background-color: $default-color;
     letter-spacing: $ls1;
     margin-bottom: 0;
+    cursor: pointer;
+
+    &:hover{
+      background-color: $red;
+    }
   }
 }
 
