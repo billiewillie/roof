@@ -141,8 +141,9 @@ $(document).ready(function() {
     // left position to move
     left:500,
     // custom rotation angles
-    degFrom:-20,
-    degTo:20
+    degFrom: -20,
+    degTo: 20,
+    auto: true,
   });
 
   $('.tab__inner--list').css('width', $('.tabs').width());
