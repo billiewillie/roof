@@ -8,7 +8,6 @@ import * as tab from "./component/tab";
 import * as burger from "./component/nav";
 import * as scroll from "./component/scroll";
 import accordion from "./component/accordion";
-import safety from "./component/safety";
 
 (function($){
 	var getRand = function (a, b) {
@@ -145,6 +144,55 @@ $(document).ready(function() {
     degFrom:-20,
     degTo:20
   });
+
+  $('.tab__inner--list').css('width', $('.tabs').width());
+
+  $(".offer__list").slick({
+    dots: false,
+    arrows: true,
+    infinite: false,
+    autoplay: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          destroy: true
+        }
+      }
+    ]
+  });
+  
+  $(".slider").slick({
+    dots: false,
+    arrows: true,
+    infinite: true,
+    autoplay: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  });
+  
+  $(".offer__slider .list").slick({
+    dots: true,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplaySpeed: 5000,
+    fade: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          destroy: true
+        }
+      }
+    ]
+  });
+  
+  $("img.lazy").lazyload();
   
 });
 
@@ -153,51 +201,5 @@ if(navigator.appVersion.indexOf("Mac") != -1){
   spanBottom.css("width", spanBottom.width()+3+"px");
 }
 
-$('.tab__inner--list').css('width', $('.tabs').width());
 
-$(".offer__list").slick({
-  dots: false,
-  arrows: true,
-  infinite: false,
-  autoplay: false,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        destroy: true
-      }
-    }
-  ]
-});
 
-$(".slider").slick({
-  dots: false,
-  arrows: true,
-  infinite: true,
-  autoplay: false,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-});
-
-$(".offer__slider .list").slick({
-  dots: true,
-  arrows: false,
-  infinite: true,
-  autoplay: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplaySpeed: 5000,
-  fade: true,
-  responsive: [
-    {
-      breakpoint: 992,
-      settings: {
-        destroy: true
-      }
-    }
-  ]
-});
-
-$("img.lazy").lazyload();

@@ -17,7 +17,7 @@ section.faq {
   }
 
   & .faq__item {
-    padding: 20px 15px;
+    padding: 20px 15px 0;
     border-top: 2px solid $mainFontColor;
     overflow: hidden;
     cursor: pointer;
@@ -26,6 +26,7 @@ section.faq {
       font-size: $fz5;
       font-weight: $bold;
       position: relative;
+      margin-bottom: 20px;
 
       &::after {
         display: block;
@@ -50,6 +51,7 @@ section.faq {
       font-style: italic;
       display: none;
       overflow: hidden;
+      padding-bottom: 20px;
     }
   }
 
@@ -67,7 +69,6 @@ section.faq {
     & p {
       font-size: $fz4;
       font-style: italic;
-      padding-top: 20px;
       display: block;
     }
   }
@@ -81,7 +82,7 @@ section.faq {
     }
 
     & .faq__item {
-      padding: 20px 0;
+      padding: 20px 0 0;
       & h3.faq__item--title {
         font-size: $fz8;
       }

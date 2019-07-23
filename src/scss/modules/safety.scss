@@ -52,11 +52,11 @@ section.safety {
 
     & .comfort {
       padding: 0 0 0 30px;
-      display: none;
       flex-direction: column;
+      display: none;
 
       &.open{
-        display: flex;
+        display: flex !important;
       }
 
       & .comfort__part {
