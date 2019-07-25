@@ -896,6 +896,7 @@ section.offer {
                   margin: 0 auto;
                   padding: 10px 10px 0;
                   font-size: $fz1;
+                  z-index: 1;
                 }
 
                 & select.select.select__time{
@@ -908,6 +909,7 @@ section.offer {
                   font-weight: $bold;
                   font-family: $mainFont;
                   line-height: $lineHeight2;
+                  z-index: 1;
 
                   &:disabled{
                     color: $mainFontColor;
@@ -1040,6 +1042,7 @@ section.offer {
                   height: 100%;
                   left: 0;
                   bottom: 0;
+                  z-index: 2;
                   background: rgba(224,224,224,1);
                   background: -moz-linear-gradient(0deg, rgba(224,224,232,1) 0%, rgba(224,224,232,1) 40%, rgba(224,224,232,0) 100%);
                   background: -webkit-gradient(bottom, top, color-stop(0%, rgba(224,224,232,1)), color-stop(40%, rgba(224,224,232,1)), color-stop(100%, rgba(224,224,232,0)));
@@ -1188,6 +1191,7 @@ section.offer {
                       & .part{
                         & select.select__time{
                           margin-bottom: 0;
+                          background-image: none;
                         }
 
                         & select.select__people{
