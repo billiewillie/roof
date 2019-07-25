@@ -139,7 +139,7 @@ $(document).ready(function() {
     // top position to move
     top:40,
     // left position to move
-    left:500,
+    left: 380,
     // custom rotation angles
     degFrom: -20,
     degTo: 20,
@@ -199,6 +199,7 @@ $(document).ready(function() {
 });
 
 var spanBottom = $('section.offer .container .content .tabs ul.tab__content li.tab__content--inner .tab__inner--item span.bottom');
+
 if(navigator.appVersion.indexOf("Mac") != -1){
   spanBottom.css("width", spanBottom.width()+3+"px");
 }
