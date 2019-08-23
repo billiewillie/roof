@@ -9,6 +9,12 @@ import * as burger from "./component/nav";
 import * as scroll from "./component/scroll";
 import accordion from "./component/accordion";
 
+// year
+const currentTime = new Date();
+const getYear = currentTime.getFullYear();
+const year = document.querySelector('.year');
+year.innerHTML = getYear;
+
 (function($){
 	var getRand = function (a, b) {
         return ~~(Math.random() * (b - a + 1)) + a;
@@ -203,6 +209,4 @@ var spanBottom = $('section.offer .container .content .tabs ul.tab__content li.t
 if(navigator.appVersion.indexOf("Mac") != -1){
   spanBottom.css("width", spanBottom.width()+3+"px");
 }
-
-
 
