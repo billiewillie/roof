@@ -340,6 +340,23 @@ main.main {
           top: 30px;
           width: 723px;
           height: 556px;
+          display: none;
+        }
+
+        & .video{
+          display: block;
+          position: absolute;
+          content: "";
+          left: 50%;
+          top: 40px;
+          width: 723px;
+          height: 556px;
+          transform: rotate(-3.24deg) translateX(-50%);
+          z-index: -1;
+          overflow: hidden;
+          & video{
+            height: 100%;
+          }
         }
 
         &::after {

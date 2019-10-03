@@ -5,6 +5,15 @@ main.main
       include ./areas
     .title
       img(src="./assets/img/title.svg", alt="title")
+      .video.visible__md
+        video(
+          autoplay="autoplay",
+          muted,
+          loop)
+          source(
+            src="./assets/img/video/video.mp4", 
+            type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+
       p.main__description.visible__md
         | Приватные террасы, на которые мы вас приглашаем, расположены на крыше особняк XIX века на 
         b Английской набережной
